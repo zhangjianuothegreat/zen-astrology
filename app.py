@@ -152,7 +152,19 @@ def generate_chart():
 
         # 生成星盘数据
         try:
-            subject = AstrologicalSubject(name, year, month, day, hour, minute, lng=longitude, lat=latitude, tz_str=pytz_timezone)
+            subject = AstrologicalSubject(
+                name=name,
+                year=year,
+                month=month,
+                day=day,
+                hour=hour,
+                minute=minute,
+                lng=longitude,
+                lat=latitude,
+                tz_str=pytz_timezone,
+                city=city if city else "Unknown",
+                nation=country if country else "Unknown"
+            )
         except Exception as e:
             logger.error(f"Failed to create AstrologicalSubject: {str(e)}")
             return jsonify({'success': False, 'error': f'Failed to generate chart: Invalid parameters'})
