@@ -2,4 +2,4 @@ flask==3.0.3
 flask-cors==5.0.0
 kerykeion==4.0.0
 pyswisseph==2.10.3.2
-pytz==2020.1
+pytz==2022.7
