@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Astrology - Your Lucky Compass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* 1. 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-purple: #2E1A47;
+            --color-gold: #FFD700;
+            --color-white: #FFFFFF;
+            --color-gray: #F5F5F5;
+            --color-text: #333333;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --container-width: 1200px;
+            --spacing: 2rem;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            line-height: 1.2;
+        }
+
+        /* 2. 容器类 */
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        /* 3. 按钮样式 */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+            background: linear-gradient(135deg, var(--color-gold), #FFC107);
+            color: var(--color-purple);
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 4. 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--color-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-gold);
+        }
+
+        /* 5. Hero 区域 */
+        header {
+            min-height: calc(100vh - 60px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: var(--spacing);
+            text-align: center;
+            background: none;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/static/astrology-hero.webp'); /* 替换为占星主题图片 */
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 26, 71, 0.4);
+            z-index: -1;
+        }
+
+        header .container {
+            z-index: 2;
+        }
+
+        header h1 {
+            color: var(--color-white);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        header h1 span {
+            color: var(--color-gold);
+        }
+
+        header p {
+            color: var(--color-white);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin: 1rem 0;
+        }
+
+        /* 6. 表单区域 */
+        form {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        form label {
+            font-weight: bold;
+            color: var(--color-purple);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-gray);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        form input:focus, form select:focus {
+            border-color: var(--color-purple);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(46, 26, 71, 0.2);
+        }
+
+        form button[type="submit"] {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        form button#toggle-method {
+            background: linear-gradient(135deg, var(--color-purple), #4B0082);
+            color: var(--color-white);
+        }
+
+        form button#toggle-method:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(46, 26, 71, 0.4);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* 7. 输出区域 */
+        #chart-container, #planets-list, #houses-list, #interpretations, #aspects {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        #chart-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #planets-list h2, #houses-list h2, #interpretations h2, #aspects h2 {
+            color: var(--color-purple);
+            margin-bottom: 1rem;
+        }
+
+        #planets-list ul, #houses-list ul, #interpretations ul, #aspects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #planets-list li, #houses-list li, #interpretations li, #aspects li {
+            margin: 0.5rem 0;
+            color: var(--color-text);
+        }
+
+        #error-message {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* 8. 引流区域 */
+        .funnel-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: var(--color-gray);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .funnel-section h2 {
+            color: var(--color-purple);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        .funnel-section p {
+            color: var(--color-text);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .funnel-section .btn {
+            margin: 0.5rem;
+        }
+
+        /* 9. 页脚 */
+        footer {
+            padding: 3rem 0;
+            background-color: var(--color-purple);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        footer a {
+            color: var(--color-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--color-gold);
+        }
+
+        /* 10. 移动端适配 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            form {
+                padding: 1.5rem;
+            }
+            .funnel-section .btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* 11. 性能优化 */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="https://www.yourluckycompass.com">Home</a>
+            <a href="https://www.yourluckycompass.com/bazi">Lucky Cosmic Blueprint</a>
+            <a href="https://www.yourluckycompass.com/lucky_city">Lucky City Match</a>
+            <a href="https://www.yourluckycompass.com/lucky_compass">Lucky Compass</a>
+            <a href="https://www.yourluckycompass.com/sound_bath">Sound Bath & Mindfulness</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Discover Your <span>Cosmic Destiny</span> with Zen Astrology</h1>
+            <p>Unveil the secrets of the stars with your free personalized birth chart!</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <form id="chart-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <label for="year">Year (1900-2025):</label>
+            <input type="number" id="year" name="year" placeholder="YYYY (1900-2025)" min="1900" max="2025" required>
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" placeholder="MM (1~12)" min="1" max="12" required>
+            <label for="day">Day:</label>
+            <input type="number" id="day" name="day" placeholder="DD (1~31)" min="1" max="31" required>
+            <label for="hour">Hour:</label>
+            <input type="number" id="hour" name="hour" placeholder="HH (0~23)" min="0" max="23" required>
+            <label for="minute">Minute:</label>
+            <input type="number" id="minute" name="minute" placeholder="MM (0~59)" min="0" max="59" required>
+
+            <label>Input Method:</label>
+            <button type="button" id="toggle-method">Switch to Manual Input</button>
+
+            <div id="city-country-inputs">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Select a country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="MX">Mexico</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="ZA">South Africa</option>
+                </select>
+                <label for="state">State/Province:</label>
+                <select id="state" name="state" required>
+                    <option value="" disabled selected>Select a state/province</option>
+                </select>
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <option value="" disabled selected>Select a city</option>
+                </select>
+                <label for="timezone">Timezone:</label>
+                <select id="timezone" name="timezone" required>
+                    <option value="" disabled selected>Select a timezone</option>
+                    <!-- 美国 -->
+                    <option value="-10" data-label="UTC-10:00 (Hawaii)">UTC-10:00 (Hawaii)</option>
+                    <option value="-9" data-label="UTC-09:00 (Alaska)">UTC-09:00 (Alaska)</option>
+                    <option value="-8" data-label="UTC-08:00 (Pacific)">UTC-08:00 (Pacific)</option>
+                    <option value="-7" data-label="UTC-07:00 (Mountain)">UTC-07:00 (Mountain)</option>
+                    <option value="-6" data-label="UTC-06:00 (Central)">UTC-06:00 (Central)</option>
+                    <option value="-5" data-label="UTC-05:00 (Eastern)">UTC-05:00 (Eastern)</option>
+                    <!-- 加拿大 -->
+                    <option value="-8" data-label="UTC-08:00 (Pacific)">UTC-08:00 (Pacific)</option>
+                    <option value="-7" data-label="UTC-07:00 (Mountain)">UTC-07:00 (Mountain)</option>
+                    <option value="-6" data-label="UTC-06:00 (Central)">UTC-06:00 (Central)</option>
+                    <option value="-5" data-label="UTC-05:00 (Eastern)">UTC-05:00 (Eastern)</option>
+                    <option value="-4" data-label="UTC-04:00 (Atlantic)">UTC-04:00 (Atlantic)</option>
+                    <!-- 墨西哥 -->
+                    <option value="-8" data-label="UTC-08:00 (Tijuana)">UTC-08:00 (Tijuana)</option>
+                    <option value="-7" data-label="UTC-07:00 (Chihuahua)">UTC-07:00 (Chihuahua)</option>
+                    <option value="-6" data-label="UTC-06:00 (Mexico City)">UTC-06:00 (Mexico City)</option>
+                    <option value="-5" data-label="UTC-05:00 (Cancun)">UTC-05:00 (Cancun)</option>
+                    <!-- 英国 -->
+                    <option value="0" data-label="UTC±00:00 (London)">UTC±00:00 (London)</option>
+                    <!-- 澳大利亚 -->
+                    <option value="8" data-label="UTC+08:00 (Perth)">UTC+08:00 (Perth)</option>
+                    <option value="9.5" data-label="UTC+09:30 (Adelaide)">UTC+09:30 (Adelaide)</option>
+                    <option value="10" data-label="UTC+10:00 (Sydney)">UTC+10:00 (Sydney)</option>
+                    <!-- 新西兰 -->
+                    <option value="12" data-label="UTC+12:00 (Auckland)">UTC+12:00 (Auckland)</option>
+                    <option value="12.75" data-label="UTC+12:45 (Chatham)">UTC+12:45 (Chatham)</option>
+                    <!-- 南非 -->
+                    <option value="2" data-label="UTC+02:00 (Johannesburg)">UTC+02:00 (Johannesburg)</option>
+                </select>
+                <p class="note">Timezones automatically adjust for Daylight Saving Time (DST) based on the date.</p>
+            </div>
+
+            <div id="manual-inputs" class="hidden">
+                <label for="latitude">Latitude:</label>
+                <input type="number" id="latitude" name="latitude" step="any" placeholder="Latitude (-90 to 90, e.g., 40.6943)">
+                <label for="longitude">Longitude:</label>
+                <input type="number" id="longitude" name="longitude" step="any" placeholder="Longitude (-180 to 180, e.g., -73.9249)">
+                <label for="manual-timezone">Timezone:</label>
+                <select id="manual-timezone" name="manual-timezone" required>
+                    <option value="" disabled selected>Select a timezone</option>
+                    <option value="-12" data-label="UTC-12:00">UTC-12:00 (Baker Island)</option>
+                    <option value="-11" data-label="UTC-11:00">UTC-11:00 (American Samoa)</option>
+                    <option value="-10" data-label="UTC-10:00">UTC-10:00 (Hawaii)</option>
+                    <option value="-9" data-label="UTC-09:00">UTC-09:00 (Alaska)</option>
+                    <option value="-8" data-label="UTC-08:00">UTC-08:00 (Pacific Time)</option>
+                    <option value="-7" data-label="UTC-07:00">UTC-07:00 (Mountain Time)</option>
+                    <option value="-6" data-label="UTC-06:00">UTC-06:00 (Central Time)</option>
+                    <option value="-5" data-label="UTC-05:00" selected>UTC-05:00 (Eastern Time)</option>
+                    <option value="-4" data-label="UTC-04:00">UTC-04:00 (Atlantic Time)</option>
+                    <option value="-3" data-label="UTC-03:00">UTC-03:00 (Brasilia)</option>
+                    <option value="-2" data-label="UTC-02:00">UTC-02:00 (Mid-Atlantic)</option>
+                    <option value="-1" data-label="UTC-01:00">UTC-01:00 (Azores)</option>
+                    <option value="0" data-label="UTC±00:00">UTC±00:00 (London)</option>
+                    <option value="1" data-label="UTC+01:00">UTC+01:00 (Paris)</option>
+                    <option value="2" data-label="UTC+02:00">UTC+02:00 (Cairo)</option>
+                    <option value="3" data-label="UTC+03:00">UTC+03:00 (Moscow)</option>
+                    <option value="4" data-label="UTC+04:00">UTC+04:00 (Dubai)</option>
+                    <option value="5" data-label="UTC+05:00">UTC+05:00 (Karachi)</option>
+                    <option value="5.5" data-label="UTC+05:30">UTC+05:30 (India)</option>
+                    <option value="6" data-label="UTC+06:00">UTC+06:00 (Dhaka)</option>
+                    <option value="7" data-label="UTC+07:00">UTC+07:00 (Bangkok)</option>
+                    <option value="8" data-label="UTC+08:00">UTC+08:00 (Beijing)</option>
+                    <option value="9" data-label="UTC+09:00">UTC+09:00 (Tokyo)</option>
+                    <option value="10" data-label="UTC+10:00">UTC+10:00 (Sydney)</option>
+                    <option value="11" data-label="UTC+11:00">UTC+11:00 (Solomon Islands)</option>
+                    <option value="12" data-label="UTC+12:00">UTC+12:00 (Fiji)</option>
+                    <option value="13" data-label="UTC+13:00">UTC+13:00 (Tonga)</option>
+                    <option value="14" data-label="UTC+14:00">UTC+14:00 (Line Islands)</option>
+                </select>
+                <p class="note">Timezones automatically adjust for Daylight Saving Time (DST) based on the date.</p>
+            </div>
+
+            <button type="submit" class="btn">Generate Your Free Birth Chart</button>
+        </form>
+
+        <div id="error-message"></div>
+        <div id="chart-container"></div>
+        <div id="planets-list"></div>
+        <div id="houses-list"></div>
+        <div id="interpretations"></div>
+        <div id="aspects"></div>
+
+        <section class="funnel-section">
+            <h2>Explore More Cosmic Insights</h2>
+            <p>Ready to unlock deeper wisdom and align your life with the universe? Discover these powerful tools at <a href="https://www.yourluckycompass.com">Your Lucky Compass</a>!</p>
+            <div>
+                <a href="https://www.yourluckycompass.com/bazi" class="btn">Discover Your Lucky Cosmic Blueprint - Reveal Your Destiny with Ancient Chinese Astrology!</a>
+                <a href="https://www.yourluckycompass.com/lucky_city" class="btn">Find Your Lucky City Match - Where Will You Thrive?</a>
+                <a href="https://www.yourluckycompass.com/lucky_compass" class="btn">Navigate Life with Your Lucky Compass - Your Personalized Success Guide!</a>
+                <a href="https://www.yourluckycompass.com/sound_bath" class="btn">Experience Sound Bath & Mindfulness - Find Inner Peace Today!</a>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Your Lucky Compass. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.yourluckycompass.com">Visit Your Lucky Compass</a> |
+                <a href="https://github.com/zhangjianuothegreat/zen-astrology">View Source Code</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 加载城市数据
+        async function loadCities() {
+            try {
+                const response = await fetch('/get-cities');
+                const cityData = await response.json();
+                return cityData;
+            } catch (err) {
+                console.error('Failed to load cities:', err);
+                document.getElementById('error-message').textContent = 'Failed to load cities. Please try again.';
+                return {};
+            }
+        }
+
+        // 切换输入方式
+        const toggleButton = document.getElementById('toggle-method');
+        const cityCountryInputs = document.getElementById('city-country-inputs');
+        const manualInputs = document.getElementById('manual-inputs');
+        let isManualInput = false;
+
+        toggleButton.addEventListener('click', () => {
+            isManualInput = !isManualInput;
+            if (isManualInput) {
+                cityCountryInputs.classList.add('hidden');
+                manualInputs.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to City/Country Input';
+                document.getElementById('country').required = false;
+                document.getElementById('state').required = false;
+                document.getElementById('city').required = false;
+                document.getElementById('timezone').required = false;
+                document.getElementById('latitude').required = true;
+                document.getElementById('longitude').required = true;
+                document.getElementById('manual-timezone').required = true;
+            } else {
+                cityCountryInputs.classList.remove('hidden');
+                manualInputs.classList.add('hidden');
+                toggleButton.textContent = 'Switch to Manual Input';
+                document.getElementById('country').required = true;
+                document.getElementById('state').required = true;
+                document.getElementById('city').required = true;
+                document.getElementById('timezone').required = true;
+                document.getElementById('latitude').required = false;
+                document.getElementById('longitude').required = false;
+                document.getElementById('manual-timezone').required = false;
+            }
+        });
+
+        // 动态加载州和城市
+        const countrySelect = document.getElementById('country');
+        const stateSelect = document.getElementById('state');
+        const citySelect = document.getElementById('city');
+        const timezoneSelect = document.getElementById('timezone');
+        let cityData = {};
+
+        const countryTimezones = {
+            'US': [
+                { value: '-10', label: 'UTC-10:00 (Hawaii)' },
+                { value: '-9', label: 'UTC-09:00 (Alaska)' },
+                { value: '-8', label: 'UTC-08:00 (Pacific)' },
+                { value: '-7', label: 'UTC-07:00 (Mountain)' },
+                { value: '-6', label: 'UTC-06:00 (Central)' },
+                { value: '-5', label: 'UTC-05:00 (Eastern)' }
+            ],
+            'CA': [
+                { value: '-8', label: 'UTC-08:00 (Pacific)' },
+                { value: '-7', label: 'UTC-07:00 (Mountain)' },
+                { value: '-6', label: 'UTC-06:00 (Central)' },
+                { value: '-5', label: 'UTC-05:00 (Eastern)' },
+                { value: '-4', label: 'UTC-04:00 (Atlantic)' }
+            ],
+            'MX': [
+                { value: '-8', label: 'UTC-08:00 (Tijuana)' },
+                { value: '-7', label: 'UTC-07:00 (Chihuahua)' },
+                { value: '-6', label: 'UTC-06:00 (Mexico City)' },
+                { value: '-5', label: 'UTC-05:00 (Cancun)' }
+            ],
+            'GB': [
+                { value: '0', label: 'UTC±00:00 (London)' }
+            ],
+            'AU': [
+                { value: '8', label: 'UTC+08:00 (Perth)' },
+                { value: '9.5', label: 'UTC+09:30 (Adelaide)' },
+                { value: '10', label: 'UTC+10:00 (Sydney)' }
+            ],
+            'NZ': [
+                { value: '12', label: 'UTC+12:00 (Auckland)' },
+                { value: '12.75', label: 'UTC+12:45 (Chatham)' }
+            ],
+            'ZA': [
+                { value: '2', label: 'UTC+02:00 (Johannesburg)' }
+            ]
+        };
+
+        countrySelect.addEventListener('change', async () => {
+            const country = countrySelect.value;
+            stateSelect.innerHTML = '<option value="" disabled selected>Select a state/province</option>';
+            citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>';
+            timezoneSelect.innerHTML = '<option value="" disabled selected>Select a timezone</option>';
+            if (country && cityData[country]) {
+                const states = [...new Set(cityData[country].map(city => city.state))].sort();
+                states.forEach(state => {
+                    const option = document.createElement('option');
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+                const timezones = countryTimezones[country] || [];
+                timezones.forEach(tz => {
+                    const option = document.createElement('option');
+                    option.value = tz.value;
+                    option.textContent = tz.label;
+                    option.setAttribute('data-label', tz.label);
+                    timezoneSelect.appendChild(option);
+                });
+            }
+        });
+
+        stateSelect.addEventListener('change', () => {
+            const country = countrySelect.value;
+            const state = stateSelect.value;
+            citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>';
+            if (country && state && cityData[country]) {
+                const cities = cityData[country].filter(city => city.state === state).sort((a, b) => a.city.localeCompare(b.city));
+                cities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.city;
+                    option.textContent = city.city;
+                    citySelect.appendChild(option);
+                });
+            }
+        });
+
+        loadCities().then(data => {
+            cityData = data;
+        });
+
+        // 表单提交与自动滚动
+        document.getElementById('chart-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = '';
+
+            try {
+                const data = {
+                    name: document.getElementById('name').value,
+                    year: parseInt(document.getElementById('year').value),
+                    month: parseInt(document.getElementById('month').value),
+                    day: parseInt(document.getElementById('day').value),
+                    hour: parseInt(document.getElementById('hour').value),
+                    minute: parseInt(document.getElementById('minute').value),
+                    input_method: isManualInput ? 'manual' : 'city',
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    country: document.getElementById('country').value,
+                    latitude: parseFloat(document.getElementById('latitude').value) || null,
+                    longitude: parseFloat(document.getElementById('longitude').value) || null,
+                    timezone: isManualInput ? document.getElementById('manual-timezone').value : document.getElementById('timezone').value
+                };
+
+                const response = await fetch('http://localhost:5000/generate-chart', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    document.getElementById('chart-container').innerHTML = result.svg;
+                    document.getElementById('planets-list').innerHTML = '<h2>Planets</h2><ul>' +
+                        result.planets.map(p =>
+                            `<li>${p.name}: ${p.sign} ${p.degree.toFixed(2)}° in ${p.house.replace('_House', ' House')}</li>`
+                        ).join('') + '</ul>';
+                    document.getElementById('houses-list').innerHTML = '<h2>Houses</h2><ul>' +
+                        result.houses.map(h =>
+                            `<li>House ${h.house}: ${h.sign} ${h.degree.toFixed(2)}°</li>`
+                        ).join('') + '</ul>';
+                    document.getElementById('interpretations').innerHTML = '<h2>Planet Interpretations</h2><ul>' +
+                        result.planet_interpretations.map(text => `<li>${text}</li>`).join('') + '</ul>';
+                    document.getElementById('aspects').innerHTML = '<h2>Aspects</h2><ul>' +
+                        result.aspects_text.map(text => `<li>${text}</li>`).join('') + '</ul>';
+
+                    // 自动滚动到星盘
+                    document.getElementById('chart-container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    errorDiv.textContent = 'Error: ' + result.error;
+                }
+            } catch (err) {
+                errorDiv.textContent = 'Failed to connect to server. Make sure backend is running.';
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+</html>

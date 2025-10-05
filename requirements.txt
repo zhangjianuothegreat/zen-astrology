@@ -1,0 +1,5 @@
+kerykeion
+flask
+flask-cors
+geopy==2.4.1
+pytz
