@@ -6,7 +6,6 @@ import json
 import logging
 import pytz
 from datetime import datetime
-import serverless_wsgi
 
 app = Flask(__name__)
 CORS(app)
@@ -302,10 +301,6 @@ def generate_chart():
             'success': False,
             'error': str(e)
         })
-
-# Serverless handler for Vercel
-def handler(event, context):
-    return serverless_wsgi.handle_request(app, event, context)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
