@@ -158,7 +158,7 @@ def generate_chart():
             return jsonify({'success': False, 'error': f'Failed to generate chart: Invalid parameters'})
 
         chart = KerykeionChartSVG(subject)
-        svg_data = chart.makeTemplate(minify=True)
+        svg_data = chart.makeTemplate()
 
         # 手动构建行星数据（包括上升星座）
         planets = [
