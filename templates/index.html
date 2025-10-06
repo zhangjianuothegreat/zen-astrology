@@ -115,7 +115,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('/static/astrology-hero.webp'); /* 替换为占星主题图片 */
+            background-image: url('/static/astrology-hero.webp');
             background-size: cover;
             background-position: center;
             z-index: -2;
@@ -370,34 +370,27 @@
                 <label for="timezone">Timezone:</label>
                 <select id="timezone" name="timezone" required>
                     <option value="" disabled selected>Select a timezone</option>
-                    <!-- 美国 -->
                     <option value="-10" data-label="UTC-10:00 (Hawaii)">UTC-10:00 (Hawaii)</option>
                     <option value="-9" data-label="UTC-09:00 (Alaska)">UTC-09:00 (Alaska)</option>
                     <option value="-8" data-label="UTC-08:00 (Pacific)">UTC-08:00 (Pacific)</option>
                     <option value="-7" data-label="UTC-07:00 (Mountain)">UTC-07:00 (Mountain)</option>
                     <option value="-6" data-label="UTC-06:00 (Central)">UTC-06:00 (Central)</option>
                     <option value="-5" data-label="UTC-05:00 (Eastern)">UTC-05:00 (Eastern)</option>
-                    <!-- 加拿大 -->
                     <option value="-8" data-label="UTC-08:00 (Pacific)">UTC-08:00 (Pacific)</option>
                     <option value="-7" data-label="UTC-07:00 (Mountain)">UTC-07:00 (Mountain)</option>
                     <option value="-6" data-label="UTC-06:00 (Central)">UTC-06:00 (Central)</option>
                     <option value="-5" data-label="UTC-05:00 (Eastern)">UTC-05:00 (Eastern)</option>
                     <option value="-4" data-label="UTC-04:00 (Atlantic)">UTC-04:00 (Atlantic)</option>
-                    <!-- 墨西哥 -->
                     <option value="-8" data-label="UTC-08:00 (Tijuana)">UTC-08:00 (Tijuana)</option>
                     <option value="-7" data-label="UTC-07:00 (Chihuahua)">UTC-07:00 (Chihuahua)</option>
                     <option value="-6" data-label="UTC-06:00 (Mexico City)">UTC-06:00 (Mexico City)</option>
                     <option value="-5" data-label="UTC-05:00 (Cancun)">UTC-05:00 (Cancun)</option>
-                    <!-- 英国 -->
                     <option value="0" data-label="UTC±00:00 (London)">UTC±00:00 (London)</option>
-                    <!-- 澳大利亚 -->
                     <option value="8" data-label="UTC+08:00 (Perth)">UTC+08:00 (Perth)</option>
                     <option value="9.5" data-label="UTC+09:30 (Adelaide)">UTC+09:30 (Adelaide)</option>
                     <option value="10" data-label="UTC+10:00 (Sydney)">UTC+10:00 (Sydney)</option>
-                    <!-- 新西兰 -->
                     <option value="12" data-label="UTC+12:00 (Auckland)">UTC+12:00 (Auckland)</option>
                     <option value="12.75" data-label="UTC+12:45 (Chatham)">UTC+12:45 (Chatham)</option>
-                    <!-- 南非 -->
                     <option value="2" data-label="UTC+02:00 (Johannesburg)">UTC+02:00 (Johannesburg)</option>
                 </select>
                 <p class="note">Timezones automatically adjust for Daylight Saving Time (DST) based on the date.</p>
@@ -469,7 +462,8 @@
         <div class="container">
             <p>© 2025 Your Lucky Compass. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.yourluckycompass.com">Visit Your Lucky Compass</a>
+                <a href="https://www.yourluckycompass.com" class="btn">Visit Your Lucky Compass</a>
+                <a href="#" id="add-to-home" class="btn">Add to Home Screen</a>
             </div>
         </div>
     </footer>
@@ -655,7 +649,6 @@
                     document.getElementById('aspects').innerHTML = '<h2>Aspects</h2><ul>' +
                         result.aspects_text.map(text => `<li>${text}</li>`).join('') + '</ul>';
 
-                    // 自动滚动到星盘
                     document.getElementById('chart-container').scrollIntoView({ behavior: 'smooth' });
                 } else {
                     errorDiv.textContent = 'Error: ' + result.error;
@@ -663,6 +656,33 @@
             } catch (err) {
                 errorDiv.textContent = 'Failed to connect to server. Make sure backend is running.';
                 console.error(err);
+            }
+        });
+
+        // PWA 添加到主屏幕
+        let deferredPrompt;
+        const addToHomeButton = document.getElementById('add-to-home');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            addToHomeButton.style.display = 'inline-block';
+        });
+
+        addToHomeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the A2HS prompt');
+                    } else {
+                        console.log('User dismissed the A2HS prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('To add Your Lucky Compass to your home screen, use your browser\'s menu and select "Add to Home Screen" or "Install App".');
             }
         });
     </script>
