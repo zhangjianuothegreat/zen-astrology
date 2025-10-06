@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zen Astrology - Your Lucky Compass</title>
+    <meta name="description" content="Generate your free natal chart and explore your cosmic destiny with Zen Astrology.">
+    <meta name="keywords" content="natal chart, free astrology, horoscope, star sign, Canberra astrology">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <style>
         /* 1. 基础重置 */
@@ -477,7 +479,7 @@
         // 加载城市数据
         async function loadCities() {
             try {
-                const response = await fetch('/get-cities');
+                const response = await fetch('/astrology/get-cities');
                 const cityData = await response.json();
                 return cityData;
             } catch (err) {
@@ -632,7 +634,7 @@
                     timezone: isManualInput ? document.getElementById('manual-timezone').value : document.getElementById('timezone').value
                 };
 
-                const response = await fetch('/generate-chart', {
+                const response = await fetch('/astrology/generate-chart', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
