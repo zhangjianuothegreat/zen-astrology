@@ -479,7 +479,7 @@
         // 加载城市数据
         async function loadCities() {
             try {
-                const response = await fetch('/astrology/get-cities');
+                const response = await fetch('/get-cities');
                 const cityData = await response.json();
                 return cityData;
             } catch (err) {
@@ -634,7 +634,7 @@
                     timezone: isManualInput ? document.getElementById('manual-timezone').value : document.getElementById('timezone').value
                 };
 
-                const response = await fetch('/astrology/generate-chart', {
+                const response = await fetch('/generate-chart', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
