@@ -12,9 +12,17 @@
     {
       "src": "static/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "googlef6415480ddc16fef.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/googlef6415480ddc16fef.html",
+      "dest": "/googlef6415480ddc16fef.html"
+    },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
