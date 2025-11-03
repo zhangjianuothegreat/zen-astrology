@@ -8,7 +8,7 @@
     <meta name="keywords" content="natal chart, free astrology, horoscope, star sign, Canberra astrology">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* 1. 基础重置 */
+        /* 保留所有原样式不变 */
         * {
             margin: 0;
             padding: 0;
@@ -33,6 +33,7 @@
             background-color: var(--color-white);
             line-height: 1.5;
             scroll-behavior: smooth;
+            padding-top: 60px;
         }
 
         h1, h2, h3 {
@@ -40,14 +41,12 @@
             line-height: 1.2;
         }
 
-        /* 2. 容器类 */
         .container {
             width: 90%;
             max-width: var(--container-width);
             margin: 0 auto;
         }
 
-        /* 3. 按钮样式 */
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
@@ -59,6 +58,10 @@
             background: linear-gradient(135deg, var(--color-gold), #FFC107);
             color: var(--color-purple);
             text-align: center;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -66,7 +69,6 @@
             box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4);
         }
 
-        /* 4. 导航栏 */
         nav {
             position: fixed;
             top: 0;
@@ -96,7 +98,6 @@
             color: var(--color-gold);
         }
 
-        /* 5. Hero 区域 */
         header {
             min-height: calc(100vh - 60px);
             display: flex;
@@ -151,7 +152,6 @@
             margin: 1rem 0;
         }
 
-        /* 6. 表单区域 */
         form {
             background-color: var(--color-white);
             border-radius: 8px;
@@ -190,6 +190,7 @@
         form button#toggle-method {
             background: linear-gradient(135deg, var(--color-purple), #4B0082);
             color: var(--color-white);
+            margin-top: 1rem;
         }
 
         form button#toggle-method:hover {
@@ -198,36 +199,164 @@
         }
 
         .hidden {
-            display: none;
+            display: none !important;
         }
 
-        /* 7. 输出区域 */
-        #chart-container, #planets-list, #houses-list, #interpretations, #aspects {
+        .note {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        #chart-container, #transit-container {
             background-color: var(--color-white);
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             margin-top: 2rem;
+            text-align: center;
         }
 
-        #chart-container img {
+        #chart-container svg, #transit-container svg {
             max-width: 100%;
             height: auto;
+            margin: 0 auto;
+            display: block;
         }
 
-        #planets-list h2, #houses-list h2, #interpretations h2, #aspects h2 {
-            color: var(--color-purple);
-            margin-bottom: 1rem;
+        #planets-list, #houses-list {
+            display: none !important;
         }
 
-        #planets-list ul, #houses-list ul, #interpretations ul, #aspects ul {
-            list-style-type: none;
+        .collapse-section {
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background-color: var(--color-white);
+        }
+
+        .collapse-header {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, var(--color-purple), #4B0082);
+            color: var(--color-white);
+            border: none;
+            text-align: left;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .collapse-header:hover {
+            background: linear-gradient(135deg, #4B0082, #2E1A47);
+        }
+
+        .collapse-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .collapse-content {
             padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
         }
 
-        #planets-list li, #houses-list li, #interpretations li, #aspects li {
-            margin: 0.5rem 0;
+        .collapse-content.active {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+
+        .collapse-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        .card {
+            background-color: var(--color-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--color-gold);
+        }
+
+        #stars-in-signs .planet-card {
+            background-color: var(--color-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--color-gold);
+        }
+
+        #stars-in-signs .planet-title {
+            font-family: var(--font-heading);
+            color: var(--color-purple);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #stars-in-signs .planet-subtitle {
+            color: var(--color-gold);
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        #stars-in-signs .planet-description {
+            line-height: 1.6;
             color: var(--color-text);
+        }
+
+        .transit-card {
+            background-color: var(--color-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .transit-strength {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #2E7D32;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .transit-title {
+            font-family: var(--font-heading);
+            color: var(--color-purple);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .transit-description {
+            line-height: 1.6;
+            color: var(--color-text);
+            margin-bottom: 0.8rem;
+        }
+
+        .transit-details {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .interpretation-card, .aspect-card {
+            line-height: 1.6;
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        #interpretations h2, #aspects h2, #stars-in-signs h2, #transits h2 {
+            color: var(--color-purple);
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
         }
 
         #error-message {
@@ -235,9 +364,9 @@
             font-weight: bold;
             margin-top: 1rem;
             text-align: center;
+            padding: 0.5rem;
         }
 
-        /* 8. 引流区域 */
         .funnel-section {
             margin: 2rem 0;
             padding: 2rem;
@@ -262,12 +391,12 @@
             margin: 0.5rem;
         }
 
-        /* 9. 页脚 */
         footer {
             padding: 3rem 0;
             background-color: var(--color-purple);
             color: var(--color-white);
             text-align: center;
+            margin-top: 4rem;
         }
 
         footer p {
@@ -284,30 +413,135 @@
             color: var(--color-gold);
         }
 
-        /* 10. 移动端适配 */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            header p {
-                font-size: 1rem;
-            }
-            form {
-                padding: 1.5rem;
-            }
-            .funnel-section .btn {
-                display: block;
-                width: 100%;
-                margin: 0.5rem 0;
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1rem; }
+            form { padding: 1.5rem; }
+            .funnel-section .btn { display: block; width: 100%; margin: 0.5rem 0; }
+            .collapse-header { font-size: 1.1rem; padding: 1rem 1.5rem; }
+            .collapse-content.active { padding: 1.5rem; }
+            .card, #stars-in-signs .planet-card, .transit-card { padding: 1rem; margin-bottom: 1rem; }
+            #stars-in-signs .planet-title, .transit-title { font-size: 1.2rem; }
+            nav .container { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+            nav a { font-size: 0.85rem; }
+            .btn, form button#toggle-method, #toggle-transit-method {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
             }
         }
 
-        /* 11. 性能优化 */
         @media (prefers-reduced-motion: reduce) {
-            * {
-                transition: none !important;
-                animation: none !important;
-            }
+            * { transition: none !important; animation: none !important; }
+        }
+
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .modal.hidden {
+            display: none !important;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: auto;
+        }
+
+        .modal-header {
+            padding: 1.5rem 1.5rem 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.4rem;
+            color: var(--color-purple);
+        }
+
+        .modal-close {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .modal-close:hover {
+            color: #000;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-body form label {
+            margin-top: 1rem;
+            display: block;
+        }
+
+        .modal-body form select,
+        .modal-body form input {
+            margin-bottom: 0.5rem;
+        }
+
+        .loading-option {
+            color: #999;
+            font-style: italic;
+        }
+
+        #toggle-transit-method {
+            background: linear-gradient(135deg, var(--color-purple), #4B0082) !important;
+            color: var(--color-white) !important;
+            width: 100% !important;
+            padding: 0.8rem 1rem !important;
+            font-size: 1rem !important;
+            box-shadow: 0 2px 8px rgba(46, 26, 71, 0.3) !important;
+        }
+
+        #toggle-transit-method:hover {
+            background: linear-gradient(135deg, #4B0082, #2E1A47) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(46, 26, 71, 0.4) !important;
+        }
+
+        #transit-location-form .btn {
+            padding: 0.9rem 1rem;
+            font-size: 1.05rem;
+        }
+
+        .modal-body input, .modal-body select {
+            padding: 0.6rem;
+            font-size: 1rem;
+        }
+
+        #transit-modal-error {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 0.5rem;
+            background-color: #fef2f2;
+            border-radius: 4px;
+        }
+
+        html, body { overflow-x: hidden; }
+        #transit-container, #chart-container, .collapse-content.active {
+            overflow: visible !important;
+            max-height: none !important;
         }
     </style>
 </head>
@@ -318,7 +552,14 @@
             <a href="https://www.yourluckycompass.com/bazi">Lucky Cosmic Blueprint</a>
             <a href="https://www.yourluckycompass.com/lucky_city">Lucky City Match</a>
             <a href="https://www.yourluckycompass.com/lucky_compass">Lucky Compass</a>
+            <a href="https://www.yourluckycompass.com/tarot">Tarot Readings</a>
             <a href="https://www.yourluckycompass.com/sound_bath">Sound Bath & Mindfulness</a>
+            <a href="https://www.yourluckycompass.com/sleep">Sleep Aid</a>
+            <a href="https://www.yourluckycompass.com/saturn-return-calculator">Saturn Return Calculator</a>
+            <a href="https://www.yourluckycompass.com/friends">Star Friends Test</a>
+            <a href="https://www.yourluckycompass.com/five-elements-diet">Five Elements Diet</a>
+            <a href="https://www.yourluckycompass.com/shop">Pet Luck Shop</a>
+            <a href="https://www.yourluckycompass.com/contact">Contact Us</a>
         </div>
     </nav>
 
@@ -370,70 +611,30 @@
                 <label for="timezone">Timezone:</label>
                 <select id="timezone" name="timezone" required>
                     <option value="" disabled selected>Select a timezone</option>
-                    <option value="-10" data-label="UTC-10:00 (Hawaii)">UTC-10:00 (Hawaii)</option>
-                    <option value="-9" data-label="UTC-09:00 (Alaska)">UTC-09:00 (Alaska)</option>
-                    <option value="-8" data-label="UTC-08:00 (Pacific)">UTC-08:00 (Pacific)</option>
-                    <option value="-7" data-label="UTC-07:00 (Mountain)">UTC-07:00 (Mountain)</option>
-                    <option value="-6" data-label="UTC-06:00 (Central)">UTC-06:00 (Central)</option>
-                    <option value="-5" data-label="UTC-05:00 (Eastern)">UTC-05:00 (Eastern)</option>
-                    <option value="-8" data-label="UTC-08:00 (Pacific)">UTC-08:00 (Pacific)</option>
-                    <option value="-7" data-label="UTC-07:00 (Mountain)">UTC-07:00 (Mountain)</option>
-                    <option value="-6" data-label="UTC-06:00 (Central)">UTC-06:00 (Central)</option>
-                    <option value="-5" data-label="UTC-05:00 (Eastern)">UTC-05:00 (Eastern)</option>
-                    <option value="-4" data-label="UTC-04:00 (Atlantic)">UTC-04:00 (Atlantic)</option>
-                    <option value="-8" data-label="UTC-08:00 (Tijuana)">UTC-08:00 (Tijuana)</option>
-                    <option value="-7" data-label="UTC-07:00 (Chihuahua)">UTC-07:00 (Chihuahua)</option>
-                    <option value="-6" data-label="UTC-06:00 (Mexico City)">UTC-06:00 (Mexico City)</option>
-                    <option value="-5" data-label="UTC-05:00 (Cancun)">UTC-05:00 (Cancun)</option>
-                    <option value="0" data-label="UTC±00:00 (London)">UTC±00:00 (London)</option>
-                    <option value="8" data-label="UTC+08:00 (Perth)">UTC+08:00 (Perth)</option>
-                    <option value="9.5" data-label="UTC+09:30 (Adelaide)">UTC+09:30 (Adelaide)</option>
-                    <option value="10" data-label="UTC+10:00 (Sydney)">UTC+10:00 (Sydney)</option>
-                    <option value="12" data-label="UTC+12:00 (Auckland)">UTC+12:00 (Auckland)</option>
-                    <option value="12.75" data-label="UTC+12:45 (Chatham)">UTC+12:45 (Chatham)</option>
-                    <option value="2" data-label="UTC+02:00 (Johannesburg)">UTC+02:00 (Johannesburg)</option>
                 </select>
-                <p class="note">Timezones automatically adjust for Daylight Saving Time (DST) based on the date.</p>
+                <p class="note">Timezones automatically adjust for DST based on the date.</p>
             </div>
 
             <div id="manual-inputs" class="hidden">
                 <label for="latitude">Latitude:</label>
-                <input type="number" id="latitude" name="latitude" step="any" placeholder="Latitude (-90 to 90, e.g., 40.6943)">
+                <input type="number" id="latitude" name="latitude" step="any" placeholder="Latitude (-90 to 90)">
                 <label for="longitude">Longitude:</label>
-                <input type="number" id="longitude" name="longitude" step="any" placeholder="Longitude (-180 to 180, e.g., -73.9249)">
+                <input type="number" id="longitude" name="longitude" step="any" placeholder="Longitude (-180 to 180)">
                 <label for="manual-timezone">Timezone:</label>
                 <select id="manual-timezone" name="manual-timezone" required>
                     <option value="" disabled selected>Select a timezone</option>
-                    <option value="-12" data-label="UTC-12:00">UTC-12:00 (Baker Island)</option>
-                    <option value="-11" data-label="UTC-11:00">UTC-11:00 (American Samoa)</option>
-                    <option value="-10" data-label="UTC-10:00">UTC-10:00 (Hawaii)</option>
-                    <option value="-9" data-label="UTC-09:00">UTC-09:00 (Alaska)</option>
-                    <option value="-8" data-label="UTC-08:00">UTC-08:00 (Pacific Time)</option>
-                    <option value="-7" data-label="UTC-07:00">UTC-07:00 (Mountain Time)</option>
-                    <option value="-6" data-label="UTC-06:00">UTC-06:00 (Central Time)</option>
-                    <option value="-5" data-label="UTC-05:00" selected>UTC-05:00 (Eastern Time)</option>
-                    <option value="-4" data-label="UTC-04:00">UTC-04:00 (Atlantic Time)</option>
-                    <option value="-3" data-label="UTC-03:00">UTC-03:00 (Brasilia)</option>
-                    <option value="-2" data-label="UTC-02:00">UTC-02:00 (Mid-Atlantic)</option>
-                    <option value="-1" data-label="UTC-01:00">UTC-01:00 (Azores)</option>
-                    <option value="0" data-label="UTC±00:00">UTC±00:00 (London)</option>
-                    <option value="1" data-label="UTC+01:00">UTC+01:00 (Paris)</option>
-                    <option value="2" data-label="UTC+02:00">UTC+02:00 (Cairo)</option>
-                    <option value="3" data-label="UTC+03:00">UTC+03:00 (Moscow)</option>
-                    <option value="4" data-label="UTC+04:00">UTC+04:00 (Dubai)</option>
-                    <option value="5" data-label="UTC+05:00">UTC+05:00 (Karachi)</option>
-                    <option value="5.5" data-label="UTC+05:30">UTC+05:30 (India)</option>
-                    <option value="6" data-label="UTC+06:00">UTC+06:00 (Dhaka)</option>
-                    <option value="7" data-label="UTC+07:00">UTC+07:00 (Bangkok)</option>
-                    <option value="8" data-label="UTC+08:00">UTC+08:00 (Beijing)</option>
-                    <option value="9" data-label="UTC+09:00">UTC+09:00 (Tokyo)</option>
-                    <option value="10" data-label="UTC+10:00">UTC+10:00 (Sydney)</option>
-                    <option value="11" data-label="UTC+11:00">UTC+11:00 (Solomon Islands)</option>
-                    <option value="12" data-label="UTC+12:00">UTC+12:00 (Fiji)</option>
-                    <option value="13" data-label="UTC+13:00">UTC+13:00 (Tonga)</option>
-                    <option value="14" data-label="UTC+14:00">UTC+14:00 (Line Islands)</option>
+                    <option value="-12">UTC-12:00</option><option value="-11">UTC-11:00</option><option value="-10">UTC-10:00</option>
+                    <option value="-9">UTC-09:00</option><option value="-8">UTC-08:00</option><option value="-7">UTC-07:00</option>
+                    <option value="-6">UTC-06:00</option><option value="-5" selected>UTC-05:00</option><option value="-4">UTC-04:00</option>
+                    <option value="-3">UTC-03:00</option><option value="-2">UTC-02:00</option><option value="-1">UTC-01:00</option>
+                    <option value="0">UTC±00:00</option><option value="1">UTC+01:00</option><option value="2">UTC+02:00</option>
+                    <option value="3">UTC+03:00</option><option value="4">UTC+04:00</option><option value="5">UTC+05:00</option>
+                    <option value="5.5">UTC+05:30</option><option value="6">UTC+06:00</option><option value="7">UTC+07:00</option>
+                    <option value="8">UTC+08:00</option><option value="9">UTC+09:00</option><option value="10">UTC+10:00</option>
+                    <option value="11">UTC+11:00</option><option value="12">UTC+12:00</option><option value="13">UTC+13:00</option>
+                    <option value="14">UTC+14:00</option>
                 </select>
-                <p class="note">Timezones automatically adjust for Daylight Saving Time (DST) based on the date.</p>
+                <p class="note">Timezones automatically adjust for DST based on the date.</p>
             </div>
 
             <button type="submit" class="btn">Generate Your Free Birth Chart</button>
@@ -441,19 +642,159 @@
 
         <div id="error-message"></div>
         <div id="chart-container"></div>
-        <div id="planets-list"></div>
-        <div id="houses-list"></div>
-        <div id="interpretations"></div>
-        <div id="aspects"></div>
+
+        <!-- 折叠面板 -->
+        <div class="collapse-section">
+            <button class="collapse-header" id="stars-header">
+                <span>Your Stars in Zodiac Signs</span>
+                <span class="collapse-icon">Down Arrow</span>
+            </button>
+            <div class="collapse-content" id="stars-in-signs-content">
+                <div id="stars-in-signs"></div>
+            </div>
+        </div>
+
+        <div class="collapse-section">
+            <button class="collapse-header" id="interpretations-header">
+                <span>Planet Interpretations</span>
+                <span class="collapse-icon">Down Arrow</span>
+            </button>
+            <div class="collapse-content" id="interpretations-content">
+                <div id="interpretations"></div>
+            </div>
+        </div>
+
+        <div class="collapse-section">
+            <button class="collapse-header" id="aspects-header">
+                <span>Aspects</span>
+                <span class="collapse-icon">Down Arrow</span>
+            </button>
+            <div class="collapse-content" id="aspects-content">
+                <div id="aspects"></div>
+            </div>
+        </div>
+
+        <!-- 行运按钮 -->
+        <div id="transit-button-container" class="hidden" style="margin-top: 2rem; text-align: center;">
+            <button id="check-transits" class="btn">Check Current Planetary Transits (Your Current Location)</button>
+        </div>
+
+        <!-- 行运结果 -->
+        <div id="transit-container" class="hidden"></div>
+        <div class="collapse-section hidden" id="transits-section">
+            <button class="collapse-header" id="transits-header">
+                <span>Current Planetary Transits</span>
+                <span class="collapse-icon">Down Arrow</span>
+            </button>
+            <div class="collapse-content" id="transits-content">
+                <div id="transits"></div>
+            </div>
+        </div>
+
+        <!-- 行运模态框 -->
+        <div id="transit-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Where are you right now?</h2>
+                    <span class="modal-close">×</span>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: 1rem; color: #444; line-height: 1.7; font-size: 1rem;">
+                        <strong>Your birthplace sets your foundation. Your current location reveals your transit.</strong><br>
+                        For the most accurate transit chart (house placements, life events, timing), we need your <strong>exact current coordinates</strong>.
+                    </p>
+
+                    <p style="margin-bottom: 1.2rem; font-size: 0.9rem; color: #1a5f1a; background: #f0fdf4; padding: 0.9rem; border-radius: 6px; border-left: 4px solid #4CAF50;">
+                        Pro Tip: Born in one city, living in another? That’s totally normal. Enter your <strong>current location</strong> to see how Saturn is really affecting your career or relationships.
+                    </p>
+
+                    <div id="transit-modal-error"></div>
+
+                    <!-- 下拉城市输入：保留但注释 + hidden -->
+                    <!--
+                    <button type="button" id="toggle-transit-method" class="btn">Switch to City Search</button>
+                    -->
+
+                    <form id="transit-location-form">
+                        <!-- 下拉输入保留但完全隐藏 -->
+                        <!--
+                        <div id="transit-city-inputs">
+                            <label for="transit-country">Country:</label>
+                            <select id="transit-country" required>
+                                <option value="" disabled selected>Select a country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="MX">Mexico</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="ZA">South Africa</option>
+                            </select>
+
+                            <label for="transit-state">State/Province:</label>
+                            <select id="transit-state" required>
+                                <option value="" disabled selected>Select a state</option>
+                            </select>
+
+                            <label for="transit-city">City:</label>
+                            <select id="transit-city" required>
+                                <option value="" disabled selected>Select a city</option>
+                            </select>
+
+                            <label for="transit-timezone">Timezone:</label>
+                            <select id="transit-timezone" required>
+                                <option value="" disabled selected>Select a timezone</option>
+                            </select>
+                        </div>
+                        -->
+
+                        <!-- 手动输入：默认显示 -->
+                        <div id="transit-manual-inputs">
+                            <label for="transit-latitude">Latitude:</label>
+                            <input type="number" id="transit-latitude" step="any" placeholder="e.g. 40.7128 (New York)" required>
+
+                            <label for="transit-longitude">Longitude:</label>
+                            <input type="number" id="transit-longitude" step="any" placeholder="e.g. -74.0060 (New York)" required>
+
+                            <label for="transit-manual-timezone">Timezone:</label>
+                            <select id="transit-manual-timezone" required>
+                                <option value="" disabled selected>Select your timezone</option>
+                                <option value="-12">UTC-12:00</option><option value="-11">UTC-11:00</option><option value="-10">UTC-10:00</option>
+                                <option value="-9">UTC-09:00</option><option value="-8">UTC-08:00 (Pacific)</option><option value="-7">UTC-07:00 (Mountain)</option>
+                                <option value="-6">UTC-06:00 (Central)</option><option value="-5">UTC-05:00 (Eastern)</option><option value="-4">UTC-04:00</option>
+                                <option value="-3">UTC-03:00</option><option value="-2">UTC-02:00</option><option value="-1">UTC-01:00</option>
+                                <option value="0">UTC±00:00</option><option value="1">UTC+01:00</option><option value="2">UTC+02:00</option>
+                                <option value="3">UTC+03:00</option><option value="4">UTC+04:00</option><option value="5">UTC+05:00</option>
+                                <option value="5.5">UTC+05:30</option><option value="6">UTC+06:00</option><option value="7">UTC+07:00</option>
+                                <option value="8">UTC+08:00</option><option value="9">UTC+09:00</option><option value="10">UTC+10:00</option>
+                                <option value="11">UTC+11:00</option><option value="12">UTC+12:00</option><option value="13">UTC+13:00</option>
+                                <option value="14">UTC+14:00</option>
+                            </select>
+
+                            <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
+                                Not sure about your coordinates?<br>
+                                <a href="https://www.yourluckycompass.com/geo-lookup" target="_blank" style="color: #FFD700; font-weight: 600; text-decoration: underline;">
+                                    Click here to look up any location worldwide (opens in new tab)
+                                </a>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn" style="margin-top: 1.5rem; width: 100%;">
+                            Generate My Transit Chart
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <section class="funnel-section">
             <h2>Explore More Cosmic Insights</h2>
-            <p>Ready to unlock deeper wisdom and align your life with the universe? Discover these powerful tools at <a href="https://www.yourluckycompass.com">Your Lucky Compass</a>!</p>
+            <p>Ready to unlock deeper wisdom? Discover these powerful tools at <a href="https://www.yourluckycompass.com">Your Lucky Compass</a>!</p>
             <div>
-                <a href="https://www.yourluckycompass.com/bazi" class="btn">Discover Your Lucky Cosmic Blueprint - Reveal Your Destiny with Ancient Chinese Astrology!</a>
-                <a href="https://www.yourluckycompass.com/lucky_city" class="btn">Find Your Lucky City Match - Where Will You Thrive?</a>
-                <a href="https://www.yourluckycompass.com/lucky_compass" class="btn">Navigate Life with Your Lucky Compass - Your Personalized Success Guide!</a>
-                <a href="https://www.yourluckycompass.com/sound_bath" class="btn">Experience Sound Bath & Mindfulness - Find Inner Peace Today!</a>
+                <a href="https://www.yourluckycompass.com/bazi" class="btn">Lucky Cosmic Blueprint</a>
+                <a href="https://www.yourluckycompass.com/lucky_city" class="btn">Lucky City Match</a>
+                <a href="https://www.yourluckycompass.com/lucky_compass" class="btn">Lucky Compass</a>
+                <a href="https://www.yourluckycompass.com/sound_bath" class="btn">Sound Bath & Mindfulness</a>
             </div>
         </section>
     </section>
@@ -469,59 +810,6 @@
     </footer>
 
     <script>
-        // 加载城市数据
-        async function loadCities() {
-            try {
-                const response = await fetch('/get-cities');
-                const cityData = await response.json();
-                return cityData;
-            } catch (err) {
-                console.error('Failed to load cities:', err);
-                document.getElementById('error-message').textContent = 'Failed to load cities. Please try again.';
-                return {};
-            }
-        }
-
-        // 切换输入方式
-        const toggleButton = document.getElementById('toggle-method');
-        const cityCountryInputs = document.getElementById('city-country-inputs');
-        const manualInputs = document.getElementById('manual-inputs');
-        let isManualInput = false;
-
-        toggleButton.addEventListener('click', () => {
-            isManualInput = !isManualInput;
-            if (isManualInput) {
-                cityCountryInputs.classList.add('hidden');
-                manualInputs.classList.remove('hidden');
-                toggleButton.textContent = 'Switch to City/Country Input';
-                document.getElementById('country').required = false;
-                document.getElementById('state').required = false;
-                document.getElementById('city').required = false;
-                document.getElementById('timezone').required = false;
-                document.getElementById('latitude').required = true;
-                document.getElementById('longitude').required = true;
-                document.getElementById('manual-timezone').required = true;
-            } else {
-                cityCountryInputs.classList.remove('hidden');
-                manualInputs.classList.add('hidden');
-                toggleButton.textContent = 'Switch to Manual Input';
-                document.getElementById('country').required = true;
-                document.getElementById('state').required = true;
-                document.getElementById('city').required = true;
-                document.getElementById('timezone').required = true;
-                document.getElementById('latitude').required = false;
-                document.getElementById('longitude').required = false;
-                document.getElementById('manual-timezone').required = false;
-            }
-        });
-
-        // 动态加载州和城市
-        const countrySelect = document.getElementById('country');
-        const stateSelect = document.getElementById('state');
-        const citySelect = document.getElementById('city');
-        const timezoneSelect = document.getElementById('timezone');
-        let cityData = {};
-
         const countryTimezones = {
             'US': [
                 { value: '-10', label: 'UTC-10:00 (Hawaii)' },
@@ -561,63 +849,172 @@
             ]
         };
 
+        const house_names = {
+            '1': 'First_House', '2': 'Second_House', '3': 'Third_House', '4': 'Fourth_House',
+            '5': 'Fifth_House', '6': 'Sixth_House', '7': 'Seventh_House', '8': 'Eighth_House',
+            '9': 'Ninth_House', '10': 'Tenth_House', '11': 'Eleventh_House', '12': 'Twelfth_House',
+            'First': 'First_House', 'Second': 'Second_House', 'Third': 'Third_House', 'Fourth': 'Fourth_House',
+            'Fifth': 'Fifth_House', 'Sixth': 'Sixth_House', 'Seventh': 'Seventh_House', 'Eighth': 'Eighth_House',
+            'Ninth': 'Ninth_House', 'Tenth': 'Tenth_House', 'Eleventh': 'Eleventh_House', 'Twelfth': 'Twelfth_House'
+        };
+
+        let cityData = null;
+        let cityDataLoading = false;
+        let cityDataPromise = null;
+
+        async function loadCities() {
+            if (cityData) return cityData;
+            if (cityDataLoading) return cityDataPromise;
+
+            cityDataLoading = true;
+            cityDataPromise = (async () => {
+                try {
+                    const response = await fetch('/get-cities');
+                    if (!response.ok) throw new Error('Network error');
+                    const data = await response.json();
+                    cityData = data;
+                    console.log('City data loaded successfully.');
+                    return data;
+                } catch (err) {
+                    console.error('Failed to load cities:', err);
+                    document.getElementById('error-message').textContent = 'Failed to load cities. Please refresh and try again.';
+                    throw err;
+                } finally {
+                    cityDataLoading = false;
+                }
+            })();
+
+            return cityDataPromise;
+        }
+
+        function populateStatesAndTimezones(country, stateEl, cityEl, tzEl) {
+            if (!cityData[country]) {
+                stateEl.innerHTML = '<option value="" disabled selected>No states available</option>';
+                tzEl.innerHTML = '<option value="" disabled selected>No timezones</option>';
+                return;
+            }
+
+            const states = [...new Set(cityData[country].map(c => c.state))].sort();
+            stateEl.innerHTML = '<option value="" disabled selected>Select a state/province</option>';
+            states.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s; opt.textContent = s;
+                stateEl.appendChild(opt);
+            });
+
+            const tzs = countryTimezones[country] || [];
+            tzEl.innerHTML = '<option value="" disabled selected>Select a timezone</option>';
+            tzs.forEach(tz => {
+                const opt = document.createElement('option');
+                opt.value = tz.value; opt.textContent = tz.label;
+                tzEl.appendChild(opt);
+            });
+        }
+
+        function populateCities(country, state, cityEl) {
+            if (!cityData[country]) {
+                cityEl.innerHTML = '<option value="" disabled selected>No cities</option>';
+                return;
+            }
+            const cities = cityData[country].filter(c => c.state === state).sort((a,b) => a.city.localeCompare(b.city));
+            cityEl.innerHTML = '<option value="" disabled selected>Select a city</option>';
+            cities.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.city; opt.textContent = c.city;
+                cityEl.appendChild(opt);
+            });
+        }
+
+        const toggleButton = document.getElementById('toggle-method');
+        const cityCountryInputs = document.getElementById('city-country-inputs');
+        const manualInputs = document.getElementById('manual-inputs');
+        let isManualInput = false;
+
+        toggleButton.addEventListener('click', () => {
+            isManualInput = !isManualInput;
+            if (isManualInput) {
+                cityCountryInputs.classList.add('hidden');
+                manualInputs.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to City/Country Input';
+                ['country', 'state', 'city', 'timezone'].forEach(id => document.getElementById(id).required = false);
+                ['latitude', 'longitude', 'manual-timezone'].forEach(id => document.getElementById(id).required = true);
+            } else {
+                cityCountryInputs.classList.remove('hidden');
+                manualInputs.classList.add('hidden');
+                toggleButton.textContent = 'Switch to Manual Input';
+                ['country', 'state', 'city', 'timezone'].forEach(id => document.getElementById(id).required = true);
+                ['latitude', 'longitude', 'manual-timezone'].forEach(id => document.getElementById(id).required = false);
+            }
+        });
+
+        const countrySelect = document.getElementById('country');
+        const stateSelect = document.getElementById('state');
+        const citySelect = document.getElementById('city');
+        const timezoneSelect = document.getElementById('timezone');
+
         countrySelect.addEventListener('change', async () => {
             const country = countrySelect.value;
-            stateSelect.innerHTML = '<option value="" disabled selected>Select a state/province</option>';
-            citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>';
-            timezoneSelect.innerHTML = '<option value="" disabled selected>Select a timezone</option>';
-            if (country && cityData[country]) {
-                const states = [...new Set(cityData[country].map(city => city.state))].sort();
-                states.forEach(state => {
-                    const option = document.createElement('option');
-                    option.value = state;
-                    option.textContent = state;
-                    stateSelect.appendChild(option);
-                });
-                const timezones = countryTimezones[country] || [];
-                timezones.forEach(tz => {
-                    const option = document.createElement('option');
-                    option.value = tz.value;
-                    option.textContent = tz.label;
-                    option.setAttribute('data-label', tz.label);
-                    timezoneSelect.appendChild(option);
-                });
+            stateSelect.innerHTML = '<option value="" disabled selected class="loading-option">Loading states...</option>';
+            citySelect.innerHTML = '<option value="" disabled selected class="loading-option">Please wait...</option>';
+            timezoneSelect.innerHTML = '<option value="" disabled selected class="loading-option">Loading timezones...</option>';
+
+            try {
+                await loadCities();
+                if (cityData[country]) {
+                    populateStatesAndTimezones(country, stateSelect, citySelect, timezoneSelect);
+                } else {
+                    stateSelect.innerHTML = '<option value="" disabled selected>No data for this country</option>';
+                    timezoneSelect.innerHTML = '<option value="" disabled selected>No timezones</option>';
+                }
+            } catch (err) {
+                stateSelect.innerHTML = '<option value="" disabled selected>Load failed</option>';
             }
         });
 
         stateSelect.addEventListener('change', () => {
             const country = countrySelect.value;
             const state = stateSelect.value;
-            citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>';
-            if (country && state && cityData[country]) {
-                const cities = cityData[country].filter(city => city.state === state).sort((a, b) => a.city.localeCompare(b.city));
-                cities.forEach(city => {
-                    const option = document.createElement('option');
-                    option.value = city.city;
-                    option.textContent = city.city;
-                    citySelect.appendChild(option);
-                });
+            citySelect.innerHTML = '<option value="" disabled selected class="loading-option">Loading cities...</option>';
+            if (cityData[country] && state) {
+                populateCities(country, state, citySelect);
             }
         });
 
-        loadCities().then(data => {
-            cityData = data;
-        });
+        loadCities().catch(() => {});
 
-        // 表单提交与自动滚动
+        function isValidDate(year, month, day) {
+            const date = new Date(year, month - 1, day);
+            return (
+                date.getFullYear() === year &&
+                date.getMonth() === month - 1 &&
+                date.getDate() === day
+            );
+        }
+
         document.getElementById('chart-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const errorDiv = document.getElementById('error-message');
             errorDiv.textContent = '';
 
             try {
+                const year = parseInt(document.getElementById('year').value);
+                const month = parseInt(document.getElementById('month').value);
+                const day = parseInt(document.getElementById('day').value);
+                const hour = parseInt(document.getElementById('hour').value);
+                const minute = parseInt(document.getElementById('minute').value);
+
+                if (!isValidDate(year, month, day)) {
+                    errorDiv.textContent = 'Invalid date! Please check the day for the selected month.';
+                    return;
+                }
+
                 const data = {
-                    name: document.getElementById('name').value,
-                    year: parseInt(document.getElementById('year').value),
-                    month: parseInt(document.getElementById('month').value),
-                    day: parseInt(document.getElementById('day').value),
-                    hour: parseInt(document.getElementById('hour').value),
-                    minute: parseInt(document.getElementById('minute').value),
+                    name: document.getElementById('name').value || 'User',
+                    year,
+                    month,
+                    day,
+                    hour,
+                    minute,
                     input_method: isManualInput ? 'manual' : 'city',
                     city: document.getElementById('city').value,
                     state: document.getElementById('state').value,
@@ -636,54 +1033,180 @@
 
                 if (result.success) {
                     document.getElementById('chart-container').innerHTML = result.svg;
-                    document.getElementById('planets-list').innerHTML = '<h2>Planets</h2><ul>' +
-                        result.planets.map(p =>
-                            `<li>${p.name}: ${p.sign} ${p.degree.toFixed(2)}° in ${p.house.replace('_House', ' House')}</li>`
-                        ).join('') + '</ul>';
-                    document.getElementById('houses-list').innerHTML = '<h2>Houses</h2><ul>' +
-                        result.houses.map(h =>
-                            `<li>House ${h.house}: ${h.sign} ${h.degree.toFixed(2)}°</li>`
-                        ).join('') + '</ul>';
-                    document.getElementById('interpretations').innerHTML = '<h2>Planet Interpretations</h2><ul>' +
-                        result.planet_interpretations.map(text => `<li>${text}</li>`).join('') + '</ul>';
-                    document.getElementById('aspects').innerHTML = '<h2>Aspects</h2><ul>' +
-                        result.aspects_text.map(text => `<li>${text}</li>`).join('') + '</ul>';
+                    document.getElementById('transit-button-container').classList.remove('hidden');
+
+                    const starsDiv = document.getElementById('stars-in-signs');
+                    starsDiv.innerHTML = '<h2>Your Stars in Zodiac Signs</h2>';
+                    result.stars_in_signs.forEach(p => {
+                        const card = document.createElement('div');
+                        card.className = 'planet-card';
+                        card.innerHTML = `
+                            <div class="planet-title">${p.title}</div>
+                            ${p.subtitle ? `<div class="planet-subtitle">${p.subtitle}</div>` : ''}
+                            <div class="planet-description">${p.description}</div>
+                        `;
+                        starsDiv.appendChild(card);
+                    });
+
+                    const interpDiv = document.getElementById('interpretations');
+                    interpDiv.innerHTML = '<h2>Planet Interpretations</h2>';
+                    result.planet_interpretations.forEach(text => {
+                        const card = document.createElement('div');
+                        card.className = 'interpretation-card card';
+                        card.innerHTML = `<p>${text}</p>`;
+                        interpDiv.appendChild(card);
+                    });
+
+                    const aspectsDiv = document.getElementById('aspects');
+                    aspectsDiv.innerHTML = '<h2>Aspects</h2>';
+                    result.aspects_text.forEach(text => {
+                        const card = document.createElement('div');
+                        card.className = 'aspect-card card';
+                        card.innerHTML = `<p>${text}</p>`;
+                        aspectsDiv.appendChild(card);
+                    });
+
+                    const firstCollapseHeader = document.getElementById('stars-header');
+                    const firstCollapseContent = document.getElementById('stars-in-signs-content');
+                    const firstCollapseIcon = firstCollapseHeader.querySelector('.collapse-icon');
+                    firstCollapseContent.classList.add('active');
+                    firstCollapseIcon.classList.add('rotate');
+                    firstCollapseIcon.textContent = 'Up Arrow';
 
                     document.getElementById('chart-container').scrollIntoView({ behavior: 'smooth' });
                 } else {
                     errorDiv.textContent = 'Error: ' + result.error;
                 }
             } catch (err) {
-                errorDiv.textContent = 'Failed to connect to server. Make sure backend is running.';
-                console.error(err);
+                errorDiv.textContent = 'Failed to connect to server. Please check your network.';
+                console.error('Generate chart error:', err);
             }
         });
 
-        // PWA 添加到主屏幕
-        let deferredPrompt;
-        const addToHomeButton = document.getElementById('add-to-home');
+        const transitModal = document.getElementById('transit-modal');
+        const transitBtn = document.getElementById('check-transits');
+        const closeBtn = document.querySelector('.modal-close');
+        const transitForm = document.getElementById('transit-location-form');
+        const modalErrorDiv = document.getElementById('transit-modal-error');
 
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            addToHomeButton.style.display = 'inline-block';
+        transitBtn?.addEventListener('click', () => {
+            transitModal.classList.remove('hidden');
+            modalErrorDiv.textContent = '';
         });
 
-        addToHomeButton.addEventListener('click', (e) => {
+        closeBtn?.addEventListener('click', () => {
+            transitModal.classList.add('hidden');
+        });
+
+        transitModal?.addEventListener('click', (e) => {
+            if (e.target === transitModal) {
+                transitModal.classList.add('hidden');
+            }
+        });
+
+        transitForm?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            modalErrorDiv.textContent = '';
+            const submitBtn = transitForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Generating...';
+
+            try {
+                const lat = parseFloat(document.getElementById('transit-latitude').value);
+                const lng = parseFloat(document.getElementById('transit-longitude').value);
+                const tz = document.getElementById('transit-manual-timezone').value;
+
+                if (!lat || !lng || !tz) throw new Error('Please fill in all fields.');
+                if (lat < -90 || lat > 90) throw new Error('Latitude must be between -90 and 90');
+                if (lng < -180 || lng > 180) throw new Error('Longitude must be between -180 and 180');
+
+                const data = { input_method: 'manual', latitude: lat, longitude: lng, timezone: tz };
+
+                const res = await fetch('/transit-chart', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+
+                if (result.success) {
+                    transitModal.classList.add('hidden');
+                    const container = document.getElementById('transit-container');
+                    container.innerHTML = result.transit_svg || '<p>Transit chart generated.</p>';
+                    container.classList.remove('hidden');
+
+                    const transitsDiv = document.getElementById('transits');
+                    transitsDiv.innerHTML = '<h2>Current Transits</h2>';
+                    if (result.transit_interpretations?.length) {
+                        result.transit_interpretations.forEach(item => {
+                            const t = item.transit;
+                            const card = document.createElement('div');
+                            card.className = 'transit-card';
+                            card.innerHTML = `
+                                <div class="transit-strength">Strength: ${t.strength.toFixed(1)}%</div>
+                                <div class="transit-title">${t.transit_planet} → ${t.natal_planet}</div>
+                                <div class="transit-description">${item.interpretation}</div>
+                            `;
+                            transitsDiv.appendChild(card);
+                        });
+                    }
+                    document.getElementById('transits-section').classList.remove('hidden');
+                    document.getElementById('transits-content').classList.add('active');
+                    document.querySelector('#transits-header .collapse-icon').classList.add('rotate');
+                    container.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error(result.error || 'Unknown error');
+                }
+            } catch (err) {
+                modalErrorDiv.textContent = 'Error: ' + err.message;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Generate My Transit Chart';
+            }
+        });
+
+        function initCollapseSections() {
+            document.querySelectorAll('.collapse-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.collapse-icon');
+                    content.classList.toggle('active');
+                    icon.classList.toggle('rotate');
+                    icon.textContent = content.classList.contains('active') ? 'Up Arrow' : 'Down Arrow';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initCollapseSections);
+
+        let deferredPrompt;
+        const addBtn = document.getElementById('add-to-home');
+        window.addEventListener('beforeinstallprompt', e => { 
+            e.preventDefault(); 
+            deferredPrompt = e; 
+            addBtn.style.display = 'inline-block'; 
+        });
+        addBtn.addEventListener('click', e => {
             e.preventDefault();
             if (deferredPrompt) {
                 deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted the A2HS prompt');
-                    } else {
-                        console.log('User dismissed the A2HS prompt');
-                    }
-                    deferredPrompt = null;
-                });
+                deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
             } else {
-                alert('To add Your Lucky Compass to your home screen, use your browser\'s menu and select "Add to Home Screen" or "Install App".');
+                alert('Tap your browser menu → Add to Home Screen (works on Chrome & Safari)');
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.paddingTop = '0';
+            const firstSection = document.querySelector('section.container');
+            if (firstSection) {
+                firstSection.style.marginTop = '60px';
+            }
+            document.documentElement.style.height = '100%';
+            document.body.style.minHeight = '100vh';
+            document.body.style.display = 'flex';
+            document.body.style.flexDirection = 'column';
         });
     </script>
 </body>

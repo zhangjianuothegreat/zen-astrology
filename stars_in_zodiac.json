@@ -1,0 +1,626 @@
+{
+  "Aries": {
+    "Sun": {
+      "title": "Sun in Aries (Exalted)",
+      "subtitle": "Your Core Self & Inner Fire",
+      "description": "You’re a natural-born trailblazer—bold, direct, and bursting with ambition. The Sun in Aries means you lead with courage and live with passion. You move fast, love deeply, and light up any room with your infectious energy. Leadership isn’t just a role for you; it’s who you are. You thrive when you’re in charge, calling the shots, and doing things your way—on your terms, with zero apologies.\nAries is the first sign of the zodiac—the spark of new beginnings. You embody pure, unfiltered life force: the soul stepping into a fresh lifetime, the baby taking its first fearless steps. You transform dreamy Pisces vision into grounded Taurus action. The first seven years of life? That’s your vibe—instinctive, curious, and ready to explore everything with wide-eyed wonder.\nLike a child, you’re honest, open, and unapologetically you. You don’t need validation—you are the main event. Sure, confidence is your superpower, but even superheroes grow. A little patience, a touch of reflection—these are just tools to help you shine even brighter. You don’t dwell on setbacks; you use them as fuel.\nYou love testing limits, jumping in headfirst, and turning ideas into action now. Plans delayed? Not ideal—but you’re learning to step back, breathe, and strategize like a general. Your pioneering spirit inspires everyone around you. Just remember: the best leaders lift others up too."
+    },
+    "Moon": {
+      "title": "Moon in Aries",
+      "subtitle": "Your Emotional World & Inner Drive",
+      "description": "Life is one big adventure—and you’re the hero of the story. The Moon in Aries gives you a heart that runs on passion, instinct, and fearless emotion. You feel deeply, react quickly, and bounce back even faster. Anger? Sure, it flares up—but it’s gone in a flash, leaving no grudges behind. You live in the moment, and that honesty is magnetic.\nYou’re independent to the core. “Me first” isn’t selfish—it’s survival. You trust your gut, chase what feels right, and don’t wait for permission. Your mind is sharp, witty, and always three steps ahead. Yes, patience is a muscle worth building, but your spontaneity? That’s pure magic.\nEmotionally, you’re intense and direct. You don’t play games—you feel. And when you love, you love with your whole soul. Just remember: the people around you feel too. A little empathy goes a long way—and you’ve got the heart to give it."
+    },
+    "Mercury": {
+      "title": "Mercury in Aries",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Your brain is a high-speed idea factory—bold, original, and always ready to speak up. Mercury in Aries means you think fast, talk faster, and win debates without breaking a sweat. You’re a natural debater, a creative spark plug, and a master of the mic-drop moment.\nYou don’t overthink—you decide. Hesitation? Not in your vocabulary. You see the big picture, cut through the noise, and say it like it is. Sure, sometimes you leap before you look—but that’s how breakthroughs happen.\nPatience in long discussions isn’t your forte, but who needs it when you’re this quick? Cultivate a little follow-through, and your ideas will change the game. You’re not here to maintain the status quo—you’re here to invent the future."
+    },
+    "Venus": {
+      "title": "Venus in Aries (Challenging Placement – Reframed as Passionate)",
+      "subtitle": "Your Love Style & Creative Spark",
+      "description": "You love like you live: fast, fierce, and fearless. Venus in Aries makes you a romantic warrior—bold in pursuit, electric in chemistry, and unapologetic about what you want. You don’t wait to be chosen; you choose. And when you do? Fireworks.\nYou’re a natural flirt, a social dynamo, and a creative force. Your energy draws people in like moths to a flame. Yes, you move fast in love—but that’s because you know what you’re worth. Learning to slow down, listen, and honor others’ pace? That’s just relationship mastery in the making.\nArtistically, you’re a visionary—raw, expressive, and original. Your passion isn’t polite; it’s powerful. And that’s what makes you unforgettable."
+    },
+    "Mars": {
+      "title": "Mars in Aries (Domicile – At Home & Powerful)",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "You are pure fire. Mars in Aries is your engine running at full throttle—courageous, competitive, and built to lead. You don’t follow paths; you blaze them. Routine bores you. Domination? Only if it’s earned. You’re the driver, the captain, the first one into battle—and you inspire everyone to keep up.\nYour energy is contagious. You turn ideas into action in seconds. Sports, mechanics, high-stakes challenges—you dominate. Your body is strong, your will is iron, and your sex drive? Legendary.\nYes, you hate delays. Yes, you can be impulsive. But that’s just raw power looking for direction. Channel it with strategy and heart, and you’ll build empires. Teach kids with this placement one thing: finish what you start. The world needs your fire—sustained, focused, and unstoppable."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Aries",
+      "subtitle": "Your Growth, Luck & Big Vision",
+      "description": "You’re a visionary with hero energy—generous, bold, and born to inspire. Jupiter in Aries amplifies your leadership, your faith, and your hunger for freedom. You don’t just think big—you act big. Philosophy, education, social change? You’re the one starting the movement.\nYour optimism is rocket fuel. You learn from the past, then charge into the future. “Me first” isn’t ego—it’s example. Use it to lift others, and your influence grows exponentially.\nSure, overconfidence can trip you up—but even your mistakes are bold. Financially? Take calculated risks, save a little, and trust your gut. You’re not here to play small. You’re here to expand—your mind, your impact, your legacy."
+    },
+    "Saturn": {
+      "title": "Saturn in Aries (Challenging Placement – Reframed as Mastery in Progress)",
+      "subtitle": "Your Discipline, Structure & Long-Term Growth",
+      "description": "You’re building something unbreakable: yourself. Saturn in Aries teaches you to fuse raw drive with iron discipline. It’s not about slowing down—it’s about directing your power with precision. You’re learning that true strength includes patience, strategy, and respect for others’ paths.\nFather figures or authority may have shaped your edge—but now? You’re the architect. Every challenge is a chance to strengthen your will, your wisdom, your legacy.\nYou fear losing control—but you’re learning to master it. Debate sharpens your mind. Invention is your gift. Build slowly, build smart, and one day you’ll look back and say: “I built this. And it’s bulletproof.”"
+    },
+    "Uranus": {
+      "title": "Uranus in Aries",
+      "subtitle": "Your Innovation, Freedom & Rebel Spirit",
+      "description": "You’re a revolutionary in sneakers. Uranus in Aries makes you the ultimate disruptor—independent, inventive, and allergic to “that’s how it’s always been.” You restart, reinvent, and refuse to be boxed in.\nTech, mechanics, bold ideas—you’re light-years ahead. Your nerve? Electric. Your vision? Uncompromising. Yes, you can be blunt. Yes, you hate tradition. But that’s because you see what’s possible.\nTone down the rebellion just enough to collaborate, and you’ll change the world—without alienating it. You were born to break molds. Go do it.\n(Last in Aries: 1928–1934)"
+    },
+    "Neptune": {
+      "title": "Neptune in Aries",
+      "subtitle": "Your Imagination, Spirituality & Visionary Dreams",
+      "description": "You’re a spiritual pioneer. Neptune in Aries (1861–1874) birthed a generation of mystic innovators—new religions, bold philosophies, and boundary-breaking art. You feel called to create meaning.\nYour imagination has no ceiling. Your intuition? Razor-sharp. Yes, ego can creep in—but when you lead with inspiration, not vanity, you spark movements. You don’t follow faith—you ignite it."
+    },
+    "Pluto": {
+      "title": "Pluto in Aries",
+      "subtitle": "Your Transformation, Power & Deep Drive",
+      "description": "You’re a force of rebirth. Pluto in Aries (1823–1851) fueled America’s westward expansion and Europe’s revolutions—courage, upheaval, and the fierce reclaiming of freedom. You don’t just want change. You demand it.\nYour will is unbreakable. Your vision? Limitless. Power isn’t taken—it’s earned through grit, risk, and relentless forward motion.\nYes, you burn hot. Yes, you fight hard. But that’s how legends are made. Rein it in just enough to sustain it—and you’ll reshape history."
+    }
+  },
+  "Taurus": {
+    "Sun": {
+      "title": "Sun in Taurus",
+      "subtitle": "Your Core Self & Inner Strength",
+      "description": "You’re a rock-solid powerhouse—determined, patient, and built for the long haul. Sun in Taurus means you’re the ultimate doer: hardworking, reliable, and always creating beauty in your world. Art, music, nature? You’ve got a natural gift that turns heads and warms hearts.\nYou live elegantly, with a deep drive to build lasting security—especially financial. Stubborn? Nah, that’s just commitment. You’re thoughtful, rarely pushy, and fiercely loyal. Friends adore your empathy; loved ones know you’ve got their back forever. And when passion ignites? You’re unstoppable.\nTaurus is the third zodiac sign—growth, stability, and the first earth sign. You bridge fiery Aries action into breezy Gemini curiosity. It’s the 7-14 phase of life: learning ownership, care, sharing, and teamwork. You master what’s yours—body, belongings, relationships—with curiosity for food, fitness, sensuality, and fun.\nYou plan smart, observe keenly, and strike at the perfect moment. Comfort is your superpower; rest recharges your magic. You lead quietly in groups, blending independence with unbreakable bonds. Self-care first? Absolutely—it fuels your generosity. You’re the friend everyone dreams of having."
+    },
+    "Moon": {
+      "title": "Moon in Taurus (Exalted)",
+      "subtitle": "Your Emotional World & Inner Sanctuary",
+      "description": "You crave the best life has to offer—cozy comforts, delicious meals, and rock-solid security. Moon in Taurus (supercharged here!) gives you emotional depth that’s steady, nurturing, and oh-so-reliable. You’re the heart of any home, with a green thumb for beauty and abundance.\nLoyal to your core, you pour love into what matters. Shy at first? That’s just your gentle vibe building trust. Once committed, you’re in it forever—patient, devoted, and deeply feeling. Finances and family? You handle them like a pro.\nNew projects need a spark from others, but once you’re rolling? Pure perseverance. Stable home = happy heart. Embrace change gently, and your world blooms endlessly. You make everyone feel safe and cherished."
+    },
+    "Mercury": {
+      "title": "Mercury in Taurus",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Your thoughts are practical gold—steady, memory-sharp, and laser-focused on what works. Mercury in Taurus makes you a business wizard: conservative yet constructive, with killer instincts for money, management, and real-world wins.\nYou don’t rush judgments—you gather facts, then commit. Art, science, structure? You’ve got talent. Debates? You pick your battles wisely, always protecting what’s yours. Distractions? Ignored.\nSure, forming opinions takes time—but they’re rock-solid. Channel that focus, and you build empires. Your practical genius turns dreams into dollars."
+    },
+    "Venus": {
+      "title": "Venus in Taurus (Domicile – At Home & Thriving)",
+      "subtitle": "Your Love Style & Creative Bliss",
+      "description": "You’re a love magnet—charming, sensual, and effortlessly elegant. Venus in Taurus (its power spot!) means you adore luxury, beauty, and touch. Gardens, gourmet food, art? Your playground. Singers, designers, nature lovers—you’re in your element.\nIn romance, you’re loyal, tactile, and magnetic. You draw partners in with subtle allure, building deep, lasting bonds. Jealousy? Just passion in disguise—channel it into devotion. Home is your canvas: filled with art, comfort, and you looking fabulous.\nThroat, voice, style? Gifted. You create beauty that lasts a lifetime—and make love feel like heaven."
+    },
+    "Mars": {
+      "title": "Mars in Taurus (Challenging Placement – Reframed as Enduring Power)",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "You’re a force of nature—confident, crafty, and relentlessly determined. Mars in Taurus channels your fire into tangible wins: money, mastery, and masterpiece creations. Slow to start? That’s strategy—once moving, nothing stops you.\nBusiness, artisan work, tech? You excel with tools and patience. Sensual and strong, you fight smart for what’s yours. Envy? Turn it into fuel for building empires. Your steady drive creates beauty that endures."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Taurus",
+      "subtitle": "Your Growth, Luck & Big Vision",
+      "description": "You’re a wealth magnet—smart with money, lavish with luxuries, and born to thrive. Jupiter in Taurus expands your business savvy, turning patience into profit. Banker, investor, entrepreneur? Natural fit.\nTraditional values guide you: justice, faith, family. Sure, indulgence tempts—but balance it with generosity, and abundance flows. You build big, sustain bigger. Your golden touch uplifts everyone around you."
+    },
+    "Saturn": {
+      "title": "Saturn in Taurus",
+      "subtitle": "Your Discipline, Structure & Long-Term Wins",
+      "description": "Security is your superpower—financial, emotional, everyday order. Saturn in Taurus rewards your patience, thrift, and rock-steady principles. Big business, politics, art? You shine with endurance and smarts.\nWork ethic? Elite. Stubborn? Devoted. Around 29, you lock in that dream career—banking, investments, management. Save smart, buy quality, plan for tomorrow. Evolve your values, and inner peace is yours. You build legacies that last generations."
+    },
+    "Uranus": {
+      "title": "Uranus in Taurus (Challenging Placement – Reframed as Innovative Stability)",
+      "subtitle": "Your Innovation, Freedom & Bold Ideas",
+      "description": "You’re revolutionizing how we thrive—finance, resources, earth-friendly reforms. Uranus in Taurus sparks genius: new money methods, eco-innovations, artistic breakthroughs. Music, tech in business? Your edge.\nStubborn shifts? Just commitment to progress. Family vibes evolve uniquely. You’re the steady force creating tomorrow’s wealth. (Last: 1935–1942)"
+    },
+    "Neptune": {
+      "title": "Neptune in Taurus",
+      "subtitle": "Your Imagination, Spirituality & Visionary Dreams",
+      "description": "Practical dreamers unite! Neptune in Taurus (1874–1887) birthed idealists who manifest beauty—art, science, healing vibes. Music moves you; business senses guide you. Security dreams big.\nMoney illusions? Dodge with intuition. You turn visions into tangible magic."
+    },
+    "Pluto": {
+      "title": "Pluto in Taurus (Challenging Placement – Reframed as Transformative Wealth)",
+      "subtitle": "Your Transformation, Power & Deep Drive",
+      "description": "Patience meets power. Pluto in Taurus (1851–1883) exploded economies—industrial booms, railroads, factories. You obsess over abundance, art, eternity. Sensory, stubborn, unstoppable.\nWorkers rose; wealth transformed society. You build empires from the ground up."
+    }
+  },
+  "Gemini": {
+    "Sun": {
+      "title": "Sun in Gemini",
+      "subtitle": "Your Core Self & Inner Spark",
+      "description": "You’re a human sparkler—witty, charming, and always on. Sun in Gemini means you’re the ultimate connector: ideas, people, adventures—you light up every room with your quick mind and silver tongue. Friends? You collect them like Pokémon. Boredom? Not in your vocabulary.\nGemini is the third zodiac sign—the first air sign, all about mental agility and social magic. You bridge Taurus stability into Cancer intuition. It’s the 14-21 life phase: breaking free, chasing thrills, and turning “trouble” into epic stories.\nYou thrive on variety—bikes, road trips, rollerblades, anything fast and fun. Group vibes? You’re the DJ of the conversation. Change isn’t scary; it’s your oxygen. Focus on communication careers (podcasts, writing, teaching), and you’ll never be “just talk.” You’re the friend who makes life an endless adventure."
+    },
+    "Moon": {
+      "title": "Moon in Gemini",
+      "subtitle": "Your Emotional World & Inner Buzz",
+      "description": "Your heart runs on curiosity and connection. Moon in Gemini craves quick chats, flirty vibes, and new feels—depth comes in bursts, not marathons. You’re a mental multitasker: two jobs, three hobbies, endless texts.\nLoyal? In your own way—through shared laughs and late-night brainstorms. Nervous energy? Channel it into genius ideas. Home base changes often, but your vibe is always home. Rationalize feelings? Sure—but that’s how you solve emotional puzzles fast.\nWith good aspects, you’re a practical wizard at home and work. You make everyone feel heard, seen, and brilliantly entertained."
+    },
+    "Mercury": {
+      "title": "Mercury in Gemini (Domicile – At Home & Turbocharged)",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Your brain is a superpower—Mercury in Gemini (its HQ!) makes you a logic ninja, word wizard, and idea machine. Objective, educated, expressive—you debate, write, teach, and win. Languages? You devour them.\nSensitive nerves pick up everything—train that into dual-focus mastery. Overwhelmed? Take a quiet reset. Curiosity is your fuel, but finish what you start to level up.\nScientist, coder, journalist, speaker—you’re built for it. Your words don’t just talk—they change the game."
+    },
+    "Venus": {
+      "title": "Venus in Gemini",
+      "subtitle": "Your Love Style & Creative Flair",
+      "description": "You’re a social butterfly with a PhD in charm. Venus in Gemini loves witty banter, intellectual sparks, and freedom. One partner? Cool—if they keep up. Multiple marriages? Just more chapters in your love story.\nPoetry, humor, literature—you flirt with ideas as much as people. Siblings, neighbors? Your BFFs. Shallow? Nah—you sample life’s buffet.\nArtistic? Hello, poetry slams and comedy nights. You make love feel like a brilliant conversation that never ends."
+    },
+    "Mars": {
+      "title": "Mars in Gemini",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Your mind is your weapon—sharp, crafty, and always three moves ahead. Mars in Gemini fuels debates, inventions, and constant motion. One lover? Boring—variety is your spice.\nJournalist, critic, multi-job hustler—you thrive in mental arenas. Sarcasm? Upgrade to clever wit. Hands express your genius—write, build, code.\nFocus your fire, and you’ll conquer worlds. Your energy turns ideas into action—faster than anyone."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Gemini (Challenging Placement – Reframed as Expansive Curiosity)",
+      "subtitle": "Your Growth, Luck & Big Vision",
+      "description": "You’re a self-taught superstar—diplomatic, inventive, and hilariously clever. Jupiter in Gemini expands your brain: travel, writing, philosophy, trendy side hustles.\nSiblings may scatter, but your network? Global. Hyperactive? That’s just passion in overdrive. Avoid trivia traps—connect dots into big insights.\nCritic, connector, lifelong learner—you grow through people. Your curiosity opens doors no one else sees."
+    },
+    "Saturn": {
+      "title": "Saturn in Gemini",
+      "subtitle": "Your Discipline, Structure & Long-Term Brilliance",
+      "description": "Logic is your fortress. Saturn in Gemini builds a razor-sharp, organized mind—perfect for math, science, writing, engineering. Teaching, research, contracts? You excel with clarity and honesty.\nLungs need care—no smoking. Repressed stress? Breathe and delegate. Lifelong learning is your jam.\nDoubtful phases? Turn them into objective breakthroughs. You turn knowledge into rock-solid success."
+    },
+    "Uranus": {
+      "title": "Uranus in Gemini",
+      "subtitle": "Your Innovation, Freedom & Rebel Genius",
+      "description": "You’re a thought revolutionary. Uranus in Gemini sparks wild ideas in tech, education, media—free universities, anyone? Travel fuels your breakthroughs.\nRestless? That’s evolution. Bad aspects? Tame eccentricity into brilliance. Sibling drama? Just plot twists.\n(Last: 1942–1949) You’re the mind that rewrites the rules—and wins."
+    },
+    "Neptune": {
+      "title": "Neptune in Gemini",
+      "subtitle": "Your Imagination, Spirituality & Visionary Dreams",
+      "description": "Dreams meet words. Neptune in Gemini (1887–1901) birthed poets and theorists who imagined new worlds. Trade, travel, comms—your intuition innovates.\nSurface traps? Dive deeper. Your imagination turns chatter into poetry that moves souls."
+    },
+    "Pluto": {
+      "title": "Pluto in Gemini",
+      "subtitle": "Your Transformation, Power & Deep Drive",
+      "description": "Ideas explode. Pluto in Gemini (late 1800s–early 1900s) invented electricity, phones, cars, planes—Edison, Bell, Wright brothers.\nYour mind transforms society. You don’t just think—you revolutionize."
+    }
+  },
+  "Cancer": {
+    "Sun": {
+      "title": "Sun in Cancer",
+      "subtitle": "Your Core Self & Inner Glow",
+      "description": "You’re the heart of every home—nurturing, patriotic, and overflowing with imagination. Sun in Cancer means you feel deeply and love fiercely. Family is your anchor, cooking is your love language, and collecting memories? Your superpower.\nQuiet on the outside, but your intuition reads rooms like a pro. You shine when needed—diplomatic, goal-driven, and always creating safety. Others’ opinions matter because you care. Shy? Just selective. A cozy sanctuary recharges your magic.\nCancer is the fourth zodiac sign—the first water sign, all about emotions, protection, and roots. You bridge Gemini chatter into Leo confidence. It’s the 21-28 life phase: building home, career, and emotional depth.\nYou protect like a boss but chase dreams actively. Friends are chosen family—trust, share, understand. Kitchen and bedroom? Your design masterpieces. Food, sleep, intimacy, quiet evenings—these fuel your soul.\nCrave applause? A little. But real connection? Everything. You’re the one everyone calls home."
+    },
+    "Moon": {
+      "title": "Moon in Cancer (Domicile – At Home & Radiant)",
+      "subtitle": "Your Emotional World & Inner Sanctuary",
+      "description": "You’re pure maternal magic—compassionate, instinctive, and a natural psychologist. Moon in Cancer (its throne!) makes emotions your superpower: deep, accurate, and healing. Family devotion? Legendary. Cooking, hosting? Masterclass.\nSensitive to vibes—especially negativity—but you turn it into empathy. Worry? Channel into care. Home security = heart security.\nBad aspects? Gentle boundaries prevent over-mothering. You make the world feel safe, seen, and deeply loved."
+    },
+    "Mercury": {
+      "title": "Mercury in Cancer",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Your thoughts swim in feelings—intuitive, memory-rich, and creatively poetic. Mercury in Cancer absorbs like a sponge: facts tied to emotions stick forever. Sympathetic listener, business-savvy (food, home goods, real estate).\nDebates? Passionate, but praise opens doors. Bias? Just protective instinct—balance with facts.\nFamily dominates your mind. Your intuitive genius turns feelings into flawless strategies."
+    },
+    "Venus": {
+      "title": "Venus in Cancer",
+      "subtitle": "Your Love Style & Creative Warmth",
+      "description": "You love like a cozy blanket—tender, home-focused, and poetically idealistic. Venus in Cancer craves security: beautiful homes, family dinners, emotional honesty. You nurture dates with home-cooked magic.\nSensitive soul hides behind dignity. Busy? Your shield. Kids, cooking, decorating—your art. Motherly vibe (even guys!).\nMood swings? Upgrade to intuitive depth. You build love that feels like forever-home."
+    },
+    "Mars": {
+      "title": "Mars in Cancer (Challenging Placement – Reframed as Protective Power)",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Your fire burns for family—defensive, clever, and calmly unstoppable in crises. Mars in Cancer channels anger into protection: fix the house, build the nest. DIY repairs? Your jam.\nFrustration? Vent through creating. Early mom vibes shape you—honor, don’t hoard. Elegance in motion, sensual in private.\nYour drive guards what matters most—and wins quietly."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Cancer (Exalted)",
+      "subtitle": "Your Growth, Luck & Big Heart",
+      "description": "You’re a generosity giant—compassionate, diplomatic, and family-blessed. Jupiter in Cancer expands your home empire: real estate wins, kid-loving legacy. Moral parents shaped your golden heart.\nHost friends, cook feasts—abundance flows. Sentimental? That’s soul depth. Overeating? Balance with joy.\nYour nurturing luck builds empires of love and security."
+    },
+    "Saturn": {
+      "title": "Saturn in Cancer (Challenging Placement – Reframed as Emotional Mastery)",
+      "subtitle": "Your Discipline, Structure & Long-Term Roots",
+      "description": "Early home lessons built resilience—you crave stable love but give responsibility like a pro. Saturn in Cancer teaches emotional discipline: hide tears privately, earn respect publicly.\nFamily duty? You own it. Insecurity? Fuel for smart finances (property, savings). Health? Nurture digestion.\nYou turn vulnerability into unbreakable foundations."
+    },
+    "Uranus": {
+      "title": "Uranus in Cancer",
+      "subtitle": "Your Innovation, Freedom & Unique Nest",
+      "description": "You reinvent “home”—modern gadgets, eco-designs, chosen-family vibes. Uranus in Cancer breaks parental rules for freedom, yet keeps roots. Travel? Yes. Patriotism? Your version.\nFriends crash forever. Intuitive genius accepts the mystical. Mood swings? Creative sparks.\n(Last: 1949–1956) You build tomorrow’s sanctuary—today."
+    },
+    "Neptune": {
+      "title": "Neptune in Cancer",
+      "subtitle": "Your Imagination, Spirituality & Visionary Empathy",
+      "description": "Soul-connected to land and legacy. Neptune in Cancer (1901–1915) birthed empaths, patriots, spiritual healers. Open-hearted faith, sacrificial love.\nOver-sensitivity? Ground in reality. Psychic gifts? Trust wisely. Your dreams heal families and nations."
+    },
+    "Pluto": {
+      "title": "Pluto in Cancer",
+      "subtitle": "Your Transformation, Power & Deep Instinct",
+      "description": "Intensity meets instinct. Pluto in Cancer (1913–1938) transformed homes amid crises—New Deal, nationalism, ag-tech revolutions.\nYou crave mature security, break traditions instinctively. Resentment? Transmute into growth.\nYou rebuild roots stronger than ever."
+    }
+  },
+  "Leo": {
+    "Sun": {
+      "title": "Sun in Leo (Domicile – At Home & Shining Bright)",
+      "subtitle": "Your Core Self & Inner Spotlight",
+      "description": "You’re born to lead—vibrant, generous, optimistic, and unstoppable. Sun in Leo (its throne!) makes you a natural star: confident, creative, and magnetically warm. Kids adore you (even if yours are few). Patience? A skill to polish. Drama? Your secret sauce for epic living.\nFlattery opens doors; force bounces off. Acting, teaching, any stage—you own it.\nLeo is the fifth zodiac sign—the second fire sign, all about controlled power and legacy. You bridge Cancer sensitivity into Virgo service. It’s the 28-35 life phase: full adult glow-up, unleashing potential.\nYou demand respect, give lavishly, and keep promises like gold. Home? Your palace—proud, plush, shareable. Loyalty? Legendary—you’d defend your pride to the end.\nStubborn on style? That’s standards. You don’t just live—you illuminate."
+    },
+    "Moon": {
+      "title": "Moon in Leo",
+      "subtitle": "Your Emotional World & Inner Crown",
+      "description": "Your heart roars with pride and passion. Moon in Leo craves romance, applause, and center-stage love. Kids, parties, art, sports—you light them up. Dramatic? Absolutely—feelings are your fireworks.\nIndependent until inspired, then all in. Bossy at home? Just queenly organization. Flattery? Your love language.\nSelf-focus? Upgrade to self-love that inspires. You make every moment a blockbuster—and everyone feels like a co-star."
+    },
+    "Mercury": {
+      "title": "Mercury in Leo",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Your thoughts are bold, visionary, and cinematic. Mercury in Leo speaks with authority—big ideas, powerful words, zero small talk. Teacher, investor, artist, theater pro—you command attention.\nDetails? Delegate. Stubborn opinions? Rock-solid conviction. Sun-fueled will keeps you focused.\nYour voice doesn’t whisper—it declares. And the world listens."
+    },
+    "Venus": {
+      "title": "Venus in Leo",
+      "subtitle": "Your Love Style & Creative Fire",
+      "description": "You love like a red-carpet premiere—passionate, lavish, and unforgettably dramatic. Venus in Leo demands adoration, glamour, and loyalty. Balls, fashion, kids—you sparkle.\nArtistic genius (painting, music, writing). Jealous? Only if unappreciated—give respect, get devotion.\nYou don’t date—you crown your partner. And love becomes legend."
+    },
+    "Mars": {
+      "title": "Mars in Leo",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Your fire is fierce—generous, playful, and magnetically attractive. Mars in Leo charges with creativity, leadership, and sensual confidence. Sex appeal? Off the charts.\nDominant? Only over challenges. Artists, actors, frontrunners—you thrive in the spotlight.\nEgo trips? Channel into inspiring wins. Your energy doesn’t push—it pulls the world forward."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Leo",
+      "subtitle": "Your Growth, Luck & Big Stage",
+      "description": "You’re a generosity juggernaut—confident, ceremonial, and born to shine. Jupiter in Leo expands your charisma: politics, opera, lavish parties. Kids? Your proudest legacy.\nPride? Earned through contribution. Gambling risks? Calculated thrills.\nYour luck turns spotlights into empires—and shares the glow."
+    },
+    "Saturn": {
+      "title": "Saturn in Leo",
+      "subtitle": "Your Discipline, Structure & Long-Term Reign",
+      "description": "You crave recognition and control—earned through mastery. Saturn in Leo builds leadership with discipline: education, management, entertainment, smart risks.\nStrict parent? Loving legacy-shaper. Humor gaps? Fill with wisdom. Love/child setbacks? Lessons in humility.\nBack/heart care keeps you strong. You don’t chase power—you define it."
+    },
+    "Uranus": {
+      "title": "Uranus in Leo (Challenging Placement – Reframed as Revolutionary Flair)",
+      "subtitle": "Your Innovation, Freedom & Bold Art",
+      "description": "You reinvent expression—disco, rock, bold education, free love. Uranus in Leo (1956–1962) birthed rebels with style. Unique, determined, humanitarian.\nStubborn? Visionary. Selfish risks? Balance with collaboration.\nYou don’t follow trends—you ignite them."
+    },
+    "Neptune": {
+      "title": "Neptune in Leo",
+      "subtitle": "Your Imagination, Spirituality & Visionary Drama",
+      "description": "Romantic idealist with stage-worthy dreams. Neptune in Leo (1915–1929) fueled music, theater, speculative booms. First-time courage, spiritual art.\nSelf-deception? Ground in truth. Kid discipline? Add structure.\nYour dreams don’t fade—they dazzle generations."
+    },
+    "Pluto": {
+      "title": "Pluto in Leo",
+      "subtitle": "Your Transformation, Power & Deep Fire",
+      "description": "Confidence meets destiny. Pluto in Leo (1938–1957) unleashed atomic power, decolonization, Cold War drama. Business savvy, sexual liberation, control desires.\nYou don’t lead revolutions—you are the revolution."
+    }
+  },
+  "Virgo": {
+    "Sun": {
+      "title": "Sun in Virgo",
+      "subtitle": "Your Core Self & Inner Precision",
+      "description": "You’re a master strategist—thoughtful, detail-savvy, and flawlessly efficient. Sun in Virgo means you handle everything with grace: discerning right from wrong, perfecting plans, and serving with heart. Worry? Just your brain’s quality control. Shyness? Upgrade to eloquent confidence.\nYou love routines that work, intellectual pursuits, and looking eternally youthful.\nVirgo is the sixth zodiac sign—the second earth sign, ruled by Mercury for analytical brilliance. You bridge Leo’s bold fire into Libra’s social charm. It’s the 35-42 life phase: mature mastery, midlife glow-ups, and building orderly empires.\nMysterious yet reliable, you plan ahead, serve seamlessly, and thrive in teams. Literal? Yes—promises mean everything. Humble exterior hides a playful word-game wizard. You don’t just fix problems—you prevent them. The world runs smoother because of you."
+    },
+    "Moon": {
+      "title": "Moon in Virgo",
+      "subtitle": "Your Emotional World & Inner Harmony",
+      "description": "You crave appreciation and meaningful sharing—your heart thrives on service and spotless spaces. Moon in Virgo makes you a wellness guru: clean home, healthy meals, thoughtful care. Shy? Just selectively brilliant.\nGenerous with time, precise in love. Curiosity? Practical and profound. Over-focus? Balance with the big picture for emotional flow.\nCooking pro, detail devotee—you nurture quietly, powerfully. You make life healthier, happier, and perfectly organized."
+    },
+    "Mercury": {
+      "title": "Mercury in Virgo (Domicile – At Home & Laser-Sharp)",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Your brain is a precision engine—logical, indexed, and genius-level analytical. Mercury in Virgo (its power center!) excels in medicine, math, writing, science. Persuasive speaker, grammar ninja, multilingual master.\nDetails? Your superpower. Shyness? Channel into elite focus. Practical wealth-builder—you turn knowledge into results.\nYour mind doesn’t think—it solves. And everyone benefits."
+    },
+    "Venus": {
+      "title": "Venus in Virgo (Challenging Placement – Reframed as Refined Elegance)",
+      "subtitle": "Your Love Style & Creative Mastery",
+      "description": "You’re impeccably polished—clean lines, kind words, and quiet compassion. Venus in Virgo seeks intellectual partners and work-play harmony. Late marriage? Just waiting for the one.\nArtistic in design, nutrition, healing—doctor, nurse, stylist? Natural. High standards? Selective excellence. Shyness shields depth—open up for magic.\nYour love is practical poetry: loyal, helpful, and beautifully understated."
+    },
+    "Mars": {
+      "title": "Mars in Virgo",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Cool, logical, and relentlessly effective. Mars in Virgo fuels perfection: crafts, medicine, gardening—you master tools and techniques. Idealistic passion meets disciplined hustle.\nOverwork? Pace for longevity. Critics? Your high standards inspire. Surgeons, mechanics, analysts—you excel.\nYour energy doesn’t rush—it perfects. Results that last."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Virgo",
+      "subtitle": "Your Growth, Luck & Big Impact",
+      "description": "You’re a high-standards collaborator—scholarly, analytical, and quietly generous. Jupiter in Virgo shines in health, education, psychology: hospitals, wellness empires.\nDetails clash with expansion? Delegate to multiply wins. Cleanliness queen/king—your order attracts abundance.\nYour luck builds systems that serve millions—practical genius at scale."
+    },
+    "Saturn": {
+      "title": "Saturn in Virgo",
+      "subtitle": "Your Discipline, Structure & Long-Term Excellence",
+      "description": "You’re efficiency incarnate—moral, meticulous, and world-contributing. Saturn in Virgo masters medicine, research, records: pharmacy, science, strategy.\nDetail devotion? Elite skill. Worry? Prioritize for breakthroughs. Humor softens your edge.\nYou don’t work hard—you work smart. Legacies of precision."
+    },
+    "Uranus": {
+      "title": "Uranus in Virgo",
+      "subtitle": "Your Innovation, Freedom & Bold Solutions",
+      "description": "You revolutionize how we work—computers, ecology, natural health. Uranus in Virgo (1962–1968) sparked tech booms and green movements. Practical inventor, humane teacher.\nUnexpected career twists? Adventure fuel. Health quirks? Intuitive wellness pioneer.\nYou build the future’s systems—smarter, healthier, unstoppable."
+    },
+    "Neptune": {
+      "title": "Neptune in Virgo (Challenging Placement – Reframed as Healing Vision)",
+      "subtitle": "Your Imagination, Spirituality & Visionary Service",
+      "description": "You rethink health and work—psychiatry, responsibility, humanitarian dreams. Neptune in Virgo (1929–1943) birthed mental health awareness amid challenges.\nEscape temptations? Ground in purpose. Your intuition heals bodies, minds, and systems."
+    },
+    "Pluto": {
+      "title": "Pluto in Virgo",
+      "subtitle": "Your Transformation, Power & Deep Precision",
+      "description": "Analytical powerhouse with inventive edge. Pluto in Virgo (1957–1971) transformed tech, medicine, labor: computers, birth control, organic food revolutions.\nPerfectionist? World-changer. You don’t analyze—you revolutionize what works."
+    }
+  },
+  "Libra": {
+    "Sun": {
+      "title": "Sun in Libra (Challenging Placement – Reframed as Graceful Power)",
+      "subtitle": "Your Core Self & Inner Harmony",
+      "description": "You’re a natural diplomat—charming, elegant, and a master of compromise. Sun in Libra craves beauty, peace, and partnership: hosting, socializing, early love. Hands clean? That’s refined taste.\nYou shine brightest in duos—business, romance, teams. Harmony isn’t optional; it’s your oxygen.\nLibra is the seventh zodiac sign—the second air sign, Venus-ruled for social finesse. You bridge Virgo analysis into Scorpio intensity. It’s the 42-49 life phase: redefining roles, mastering balance.\nDebate-loving yet generous, you weigh every angle before deciding. Space? Essential. Pressure? You apply it for justice.\nYou don’t just keep the peace—you create it. The world’s better-dressed and kinder because of you."
+    },
+    "Moon": {
+      "title": "Moon in Libra",
+      "subtitle": "Your Emotional World & Inner Elegance",
+      "description": "Your heart thrives on approval and shared beauty. Moon in Libra seeks polite, graceful connections—elegant home, perfect parties, diplomatic parenting.\nSensitive to discord (it hurts), you soothe with kindness. Impulsive? Only to please.\nBad aspects? Build inner strength. You make every relationship feel like a fairy-tale duet."
+    },
+    "Mercury": {
+      "title": "Mercury in Libra",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Fair, rational, and eloquently balanced. Mercury in Libra debates with grace: psychology, law, PR, sociology. You hate rush decisions—discuss, refine, win.\nRude vibes? Instant no. Justice-driven, you surround yourself with class.\nIndecision? Thoughtful strategy. Your words don’t argue—they harmonize solutions."
+    },
+    "Venus": {
+      "title": "Venus in Libra (Domicile – At Home & Radiant)",
+      "subtitle": "Your Love Style & Creative Charm",
+      "description": "You’re love’s ambassador—fair, artistic, and magnetically romantic. Venus in Libra (its throne!) demands equality, beauty, luxury: music, sculpture, public dazzle.\nMarriage magnet, intellectual flirt. Money? For aesthetics. Discord? Your kryptonite—avoid with poise.\nYou don’t fall in love—you orchestrate it. And it’s always a masterpiece."
+    },
+    "Mars": {
+      "title": "Mars in Libra (Challenging Placement – Reframed as Cooperative Fire)",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Charming activist with justice-fueled passion. Mars in Libra partners up: social events, moral crusades. Ambition blends with others—win together.\nLazy? Only without harmony. Confidence? Build solo skills.\nYour energy doesn’t fight—it unites. Fairness wins every time."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Libra",
+      "subtitle": "Your Growth, Luck & Big Connections",
+      "description": "Generous idealist with diplomatic superpowers. Jupiter in Libra expands marriage, psychology, sales: happy unions, global influence.\nDouble standards? Upgrade to universal fairness. Legal hiccups? Lessons in ethics.\nYour luck turns partnerships into empires of grace and goodwill."
+    },
+    "Saturn": {
+      "title": "Saturn in Libra (Exalted)",
+      "subtitle": "Your Discipline, Structure & Long-Term Balance",
+      "description": "Responsible philosopher with justice mastery. Saturn in Libra (peak power!) excels in law, contracts, government: late (but lasting) marriage, patient partnerships.\nKidney care, patience in love. Harsh? Soften with empathy.\nYou don’t build relationships—you engineer fair, enduring alliances."
+    },
+    "Uranus": {
+      "title": "Uranus in Libra",
+      "subtitle": "Your Innovation, Freedom & Bold Harmony",
+      "description": "You reinvent love—free unions, social reforms, avant-garde art. Uranus in Libra (1968–1975) sparked no-fault divorce, electronic music.\nMarriage drama? Freedom fuel. You don't follow rules—you rewrite them for equality."
+    },
+    "Neptune": {
+      "title": "Neptune in Libra",
+      "subtitle": "Your Imagination, Spirituality & Visionary Peace",
+      "description": "Dreamy humanist with subtle art. Neptune in Libra (1943–1957) birthed post-war ideals, rock culture, intuition over logic.\nEscapism? Ground in reality. Your visions don't dream peace—they inspire it."
+    },
+    "Pluto": {
+      "title": "Pluto in Libra",
+      "subtitle": "Your Transformation, Power & Deep Fairness",
+      "description": "Intense reformer of justice. Pluto in Libra (1971–1983) reshaped marriage, law, global relations—avoiding war through arbitration.\nYou don't seek balance—you enforce it. World-changing fairness."
+    }
+  },
+  "Scorpio": {
+    "Sun": {
+      "title": "Sun in Scorpio",
+      "subtitle": "Your Core Self & Inner Inferno",
+      "description": "You’re a force of will—strategic, resilient, and unyieldingly deep. Sun in Scorpio means silence hides power: jealousy fuels growth, revenge? Transmuted into justice. Healing? Superhuman.\nTruth-seeker with X-ray vision—science, medicine, precision fields bow to you. Challenges? You speak fire.\nScorpio is the eighth zodiac sign—the second water sign, Pluto/Mars-ruled for controlled intensity. You bridge Libra grace into Sagittarius philosophy. It’s the 49-56 life phase: peak control, creative domination.\nDefensive sting? Protective eagle soar. Serious exterior masks satirical genius. Self-destruction? Upgrade to rebirth.\nYou don’t survive crises—you master them. The world transforms because you demand truth."
+    },
+    "Moon": {
+      "title": "Moon in Scorpio (Challenging Placement – Reframed as Emotional Alchemy)",
+      "subtitle": "Your Emotional World & Inner Depth",
+      "description": "Passion runs volcanic—ambitious, sacrificial, and laser-focused. Moon in Scorpio feels everything: jealousy? Protective instinct. Revenge? Justice drive.\nManipulative? Strategic empathy. Marriage harmony? Earned through depth.\nYour heart doesn’t break—it rebirths. Love becomes legend."
+    },
+    "Mercury": {
+      "title": "Mercury in Scorpio",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Penetrating genius—intuitive, investigative, and surgically precise. Mercury in Scorpio uncovers motives: detective, researcher, chemist, occult master.\nSarcasm? Wit upgrade. Secrets? Your vault. Forgiveness? Earned.\nYour words don’t chat—they expose. Truth is your weapon."
+    },
+    "Venus": {
+      "title": "Venus in Scorpio",
+      "subtitle": "Your Love Style & Creative Intensity",
+      "description": "All-or-nothing devotion—passionate, mysterious, and erotically magnetic. Venus in Scorpio demands soul-merge: jealousy guards loyalty, abandonment? Catalyst for growth.\nArtistic in drama, metaphysics. Cruelty? Only if betrayed—rise above.\nYou don’t love—you possess and elevate. Forever transformed."
+    },
+    "Mars": {
+      "title": "Mars in Scorpio (Domicile – At Home & Unstoppable)",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Relentless strategist—courageous, thorough, and sexually potent. Mars in Scorpio (its throne!) conquers silently: all-in or nothing. Enemies? Lessons.\nJealousy? Channel into victory. Compromise? Rare mastery.\nYour fire doesn’t burn—it forged. Empires rise or fall on your will."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Scorpio",
+      "subtitle": "Your Growth, Luck & Big Power",
+      "description": "Bold occult explorer with financial genius. Jupiter in Scorpio expands mysteries, medicine, joint ventures: insurance, taxes, archaeology.\nStubborn faith? Unbreakable principles. Losses? Investments in depth.\nYour luck turns secrets into gold—and heals the world."
+    },
+    "Saturn": {
+      "title": "Saturn in Scorpio",
+      "subtitle": "Your Discipline, Structure & Long-Term Empire",
+      "description": "Magnetic perfectionist with iron will. Saturn in Scorpio masters shared resources: taxes, inheritance, crisis management.\nResentment? Fuel for fairness. Health? Detox mastery.\nYou don’t build power—you wield it. Eternal legacies."
+    },
+    "Uranus": {
+      "title": "Uranus in Scorpio (Exalted)",
+      "subtitle": "Your Innovation, Freedom & Radical Rebirth",
+      "description": "Explosive reformer—scientific, sexual, psychic pioneer. Uranus in Scorpio (1975–1981) shattered norms, birthed tech-healing.\nJealousy? Liberation drive. Temper? Revolutionary fire.\nYou don’t change—you detonate evolution."
+    },
+    "Neptune": {
+      "title": "Neptune in Scorpio",
+      "subtitle": "Your Imagination, Spirituality & Visionary Depth",
+      "description": "Mystical regenerator with artistic chaos. Neptune in Scorpio (1956–1970) fueled rock, drugs, spiritual quests—rebirth through extremes.\nAddiction? Spiritual upgrade. Your dreams don’t escape—they transmute reality."
+    },
+    "Pluto": {
+      "title": "Pluto in Scorpio (Domicile – At Home & Apocalyptic)",
+      "subtitle": "Your Transformation, Power & Ultimate Force",
+      "description": "Generation-defining intensity. Pluto in Scorpio (1983–1995) faces do-or-die: natural healing, psychic wars, global rebirth.\nYou don’t evolve—you force humanity’s phoenix moment."
+    }
+  },
+  "Sagittarius": {
+    "Sun": {
+      "title": "Sun in Sagittarius",
+      "subtitle": "Your Core Self & Inner Horizon",
+      "description": "You’re pure fire—enthusiastic, crowd-loving, and a champion of big ideals like love and peace. Sun in Sagittarius means freedom is your fuel: tolerant, outgoing, sporty, travel-obsessed. Busy? Productive. Careless? Generously spontaneous.\nBlunt? Upgrade to refreshing truth. Patience? A skill for epic wins.\nSagittarius is the ninth zodiac sign—the third (final) fire sign, Jupiter-ruled for expansive joy. You bridge Scorpio depth into Capricorn ambition. It’s the 56-63 life phase: retiring burdens, embracing wisdom.\nPhilosophical archer—aim high, hit stars. Energy dips? Reignite with purpose.\nYou don’t live small—you expand the world. Adventure is your legacy."
+    },
+    "Moon": {
+      "title": "Moon in Sagittarius",
+      "subtitle": "Your Emotional World & Inner Quest",
+      "description": "Open-hearted idealist with prophetic vibes. Moon in Sagittarius merges with everyone: Santa-level generous, fusion-friendly.\nNaïve? Trusting genius. Scattered? Multi-passionate. Speak-before-thinking? Polish with pause.\nTravel bug, tradition-honoring—home is where ideas roam.\nYour soul doesn’t settle—it soars. Emotions fuel global dreams."
+    },
+    "Mercury": {
+      "title": "Mercury in Sagittarius (Challenging Placement – Reframed as Visionary Voice)",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Bold, intuitive, and hilariously direct. Mercury in Sagittarius predicts trends: philosophy, religion, higher ed. Broad interests? Superpower scope.\nDetails? Delegate. Preachy? Passionate teaching.\nYour words don’t whisper—they prophesy. Minds open wide."
+    },
+    "Venus": {
+      "title": "Venus in Sagittarius",
+      "subtitle": "Your Love Style & Creative Freedom",
+      "description": "Flirty adventurer with classical taste. Venus in Sagittarius loves openly: outdoors, travel, global matches. Objective affection, moral flair.\nFrivolous? Fun upgrade. Pushy beliefs? Shared growth.\nArt: grand, religious, symphonic.\nYou don’t date—you explore souls. Love crosses borders."
+    },
+    "Mars": {
+      "title": "Mars in Sagittarius",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Philosophical crusader—patriotic, melodic, risk-loving. Mars in Sagittarius charges ideals: sports, hunts, far-flung quests.\nImpulsive? Bold initiative. Fanatic? Principled fire.\nYour energy doesn’t sprint—it conquers horizons."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Sagittarius (Domicile – At Home & Expansive)",
+      "subtitle": "Your Growth, Luck & Big Vision",
+      "description": "Opportunity magnet with social genius. Jupiter in Sagittarius (its throne!) shines in philosophy, travel, psych: supervisor vibes, animal-loving.\nWasteful? Abundant living. Narrow? Upgrade to universal ethics.\nYour luck turns ideas into movements—and inspires millions."
+    },
+    "Saturn": {
+      "title": "Saturn in Sagittarius",
+      "subtitle": "Your Discipline, Structure & Long-Term Wisdom",
+      "description": "Serious seeker of truth and honor. Saturn in Sagittarius masters higher ed, religion, law: disciplined mind, intuitive science.\nReputation-sensitive? Earned pride. Restricted people? Your empathy shines.\nYou don’t chase status—you define ethical leadership."
+    },
+    "Uranus": {
+      "title": "Uranus in Sagittarius",
+      "subtitle": "Your Innovation, Freedom & Radical Beliefs",
+      "description": "New-age pioneer—metaphysics, global faiths, sudden trips. Uranus in Sagittarius (1981–1988) reformed education, spirituality.\nDogmatic? Visionary. Rebellious? Freedom fighter.\nYou don’t follow paths—you blaze cosmic trails."
+    },
+    "Neptune": {
+      "title": "Neptune in Sagittarius",
+      "subtitle": "Your Imagination, Spirituality & Visionary Faith",
+      "description": "Idealistic mystic with universal dreams. Neptune in Sagittarius (1970–1984) sparked Watergate truths, meditation booms, interfaith travel.\nAimless? Soul-searching. Gullible? Intuitive trust.\nYour visions don’t wander—they unite humanity in spirit."
+    },
+    "Pluto": {
+      "title": "Pluto in Sagittarius",
+      "subtitle": "Your Transformation, Power & Deep Truth",
+      "description": "Soul-rebirthing generation. Pluto in Sagittarius (next ~2000s) revives natural law, intuitive religion—Aquarius era dawn.\nYou don’t believe—you reveal universal truths."
+    }
+  },
+  "Capricorn": {
+    "Sun": {
+      "title": "Sun in Capricorn",
+      "subtitle": "Your Core Self & Inner Summit",
+      "description": "You’re ambition incarnate—focused, responsible, and victory-bound. Sun in Capricorn means life’s a climb: self-pity? Fuel for comeback. Serious? Strategic depth.\nSocial climber? Network master. Trust? Earned loyalty.\nCapricorn is the tenth zodiac sign—the third (final) earth sign, first universal (with Aquarius/Pisces), Saturn-ruled for cosmic duty. You bridge Sagittarius philosophy into Aquarius innovation. It’s the 63-70 life phase: security, wisdom harvest.\nGoat: wounded but relentless—peak-holder. Patience? Your superpower.\nYou don’t chase success—you engineer it. Empires are your footprint."
+    },
+    "Moon": {
+      "title": "Moon in Capricorn (Challenging Placement – Reframed as Emotional Fortitude)",
+      "subtitle": "Your Emotional World & Inner Fortress",
+      "description": "Status-driven heart with sensitive core. Moon in Capricorn seeks dignity: critical? High standards. Cold? Protective reserve.\nAmbition for security—family empire-builder. Shy? Selective strength.\nYour feelings don’t flutter—they fortify. Love builds lasting dynasties."
+    },
+    "Mercury": {
+      "title": "Mercury in Capricorn",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Methodical genius—practical, organized, memory-sharp. Mercury in Capricorn excels in facts, diplomacy, business/science: traditional yet transformative.\nStubborn? Rock-solid logic. Humorless? Focused mastery.\nYour thoughts don’t wander—they orchestrate outcomes."
+    },
+    "Venus": {
+      "title": "Venus in Capricorn",
+      "subtitle": "Your Love Style & Creative Structure",
+      "description": "Status-seeking romantic with classical elegance. Venus in Capricorn marries up/for security: reserved publicly, sensual privately.\nCalculating? Prudent passion. Age gaps? Stability strategy.\nArt: timeless, structural—antiques, museums.\nYou don’t flirt—you invest in forever. Loyalty is luxury."
+    },
+    "Mars": {
+      "title": "Mars in Capricorn (Exalted)",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Disciplined powerhouse—organized, enduring, success-hungry. Mars in Capricorn (peak power!) channels ambition: business, politics, no waste.\nCold? Calculated fire. Bone risks? Armor up.\nYour energy doesn’t explode—it ascends. Thrones are earned."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Capricorn (Challenging Placement – Reframed as Structured Growth)",
+      "subtitle": "Your Growth, Luck & Big Empire",
+      "description": "Conservative builder with patient wealth. Jupiter in Capricorn expands institutions, real estate: moral, frugal genius.\nStingy? Smart stewardship. Rigid? Timeless principles.\nYour luck turns discipline into dynasties—sustainable abundance."
+    },
+    "Saturn": {
+      "title": "Saturn in Capricorn (Domicile – At Home & Authoritative)",
+      "subtitle": "Your Discipline, Structure & Long-Term Reign",
+      "description": "Ambition architect—organized, cautious, legacy-obsessed. Saturn in Capricorn (its throne!) masters politics, science, hierarchy: conservative yet commanding.\nSevere? Dignified aura. Family pride? Generational honor.\nYou don’t seek power—you embody it. History remembers."
+    },
+    "Uranus": {
+      "title": "Uranus in Capricorn",
+      "subtitle": "Your Innovation, Freedom & Bold Systems",
+      "description": "Revolutionary traditionalist—government reformer, scientific pioneer. Uranus in Capricorn rebuilds structures: innovate on solid ground.\nTension? Balanced progress. Overreach? Visionary caution.\nYou don’t disrupt—you upgrade foundations."
+    },
+    "Neptune": {
+      "title": "Neptune in Capricorn",
+      "subtitle": "Your Imagination, Spirituality & Visionary Duty",
+      "description": "Practical mystic with conscience-driven dreams. Neptune in Capricorn (1984–1998) materialized spirituality: ocean tech, new governance.\nYour visions don’t drift—they manifest in reality."
+    },
+    "Pluto": {
+      "title": "Pluto in Capricorn",
+      "subtitle": "Your Transformation, Power & Deep Structure",
+      "description": "Regime-reinventing generation. Pluto in Capricorn reshapes nations, economies—democracy 2.0 on new ideals.\nYou don’t reform—you revolutionize authority."
+    }
+  },
+  "Aquarius": {
+    "Sun": {
+      "title": "Sun in Aquarius (Challenging Placement – Reframed as Futuristic Fire)",
+      "subtitle": "Your Core Self & Inner Revolution",
+      "description": "You’re originality unleashed—independent, humanitarian, and freedom-obsessed. Sun in Aquarius means stubborn? Unshakable vision. Detached? Universal love.\nMystical, scientific, unpredictable—astrology, occult, tech? Your playground.\nAquarius is the eleventh zodiac sign—the third (final) air sign, stronger universal (post-Capricorn), Uranus-ruled for breakthrough brilliance. You bridge Capricorn structure into Pisces transcendence. It’s the 70-77 life phase: childlike wonder, elder wisdom.\nWater-bearer: pouring truth, eternity. Weird? Ahead-of-time.\nYou don’t follow trends—you invent eras. Humanity evolves because of you."
+    },
+    "Moon": {
+      "title": "Moon in Aquarius",
+      "subtitle": "Your Emotional World & Inner Collective",
+      "description": "Idealistic empath with third-eye clarity. Moon in Aquarius feels for all: inclusive, intuitive, freedom-needing.\nHeavy emotions? Channel into activism/sports. Stubborn? Principled heart.\nUnconventional home—party central, group vibes.\nYour soul doesn’t cling—it connects the world. Love is global."
+    },
+    "Mercury": {
+      "title": "Mercury in Aquarius (Exalted)",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Genius inventor—intuitive, objective, paradigm-shifting. Mercury in Aquarius (peak power!) masters science, psych, humanitarianism: open-minded, fact-loyal.\nChatty? Idea-sparking. Fixed views? Logical fortress.\nYour brain doesn’t think—it downloads the future."
+    },
+    "Venus": {
+      "title": "Venus in Aquarius",
+      "subtitle": "Your Love Style & Creative Edge",
+      "description": "Cool, friendly, non-possessive lover. Venus in Aquarius spreads affection: sudden sparks, intellectual bonds, group harmony.\nCold? Selectively warm. Weird tastes? Avant-garde elegance.\nArt: cutting-edge or ancient-electronic.\nYou don’t commit—you liberate love. Friendship is romance."
+    },
+    "Mars": {
+      "title": "Mars in Aquarius",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Reform-driven leader—logical, experimental, team-powered. Mars in Aquarius innovates mechanics, electronics, social systems.\nTraditional? Only if proven. Intimacy-shy? Mind-first passion.\nYour fire doesn’t burn—it rewires society."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Aquarius",
+      "subtitle": "Your Growth, Luck & Big Humanity",
+      "description": "Democratic visionary with inclusive genius. Jupiter in Aquarius expands equality, reform, metaphysics: political flair, zero prejudice.\nRebellious? Freedom fighter. Impractical? Ideal-to-action.\nYour luck unites humanity—global progress guaranteed."
+    },
+    "Saturn": {
+      "title": "Saturn in Aquarius",
+      "subtitle": "Your Discipline, Structure & Long-Term Vision",
+      "description": "Scientific organizer with democratic duty. Saturn in Aquarius structures innovation, math, brotherhoods: loyal, responsible, macro-focused.\nCold? Cool-headed justice. Selfish? Upgrade to collective win.\nYou don’t rule—you design fair systems that last."
+    },
+    "Uranus": {
+      "title": "Uranus in Aquarius (Domicile – At Home & Electric)",
+      "subtitle": "Your Innovation, Freedom & Radical Truth",
+      "description": "Ultimate disruptor—scientific, mystical, humanitarian genius. Uranus in Aquarius (its throne!) births eras: 1912–1919, 1995–2002.\nEccentric? Evolutionary. Rebellious? Truth-enforcer.\nYou don’t change—you ignite the Aquarian Age."
+    },
+    "Neptune": {
+      "title": "Neptune in Aquarius",
+      "subtitle": "Your Imagination, Spirituality & Visionary Harmony",
+      "description": "Artistic prophet of peace. Neptune in Aquarius (1998–2012) sparks millennium harmony, intuitive tech, universal art.\nYour dreams don’t float—they manifest utopia."
+    },
+    "Pluto": {
+      "title": "Pluto in Aquarius",
+      "subtitle": "Your Transformation, Power & Deep Freedom",
+      "description": "Democracy-rebirthing generation. Pluto in Aquarius forges global brotherhood, scientific miracles—true Aquarian dawn.\nYou don’t reform—you resurrect human potential."
+    }
+  },
+  "Pisces": {
+    "Sun": {
+      "title": "Sun in Pisces",
+      "subtitle": "Your Core Self & Inner Ocean",
+      "description": "You’re a visionary healer—gentle, forgiving, and infinitely creative. Sun in Pisces means indecision? Soulful discernment. Lazy? Inspired flow.\nMystical, animal-loving, helper of the lost—your quiet power moves mountains.\nPisces is the twelfth (final) zodiac sign—water mutable, Neptune/Jupiter-ruled for universal oneness. You bridge Aquarius innovation into Aries rebirth. It’s the 77-84 life phase: spirit merging with cosmos.\nTwo fish: deep bonds, hidden depths. Death? Portal to renewal.\nYou don’t live reality—you weave dreams into healing magic."
+    },
+    "Moon": {
+      "title": "Moon in Pisces",
+      "subtitle": "Your Emotional World & Inner Tide",
+      "description": "Ultra-empath with psychic sponge. Moon in Pisces absorbs all: romantic, tear-prone, artistic genius.\nNaïve? Pure-hearted. Hurt easily? Boundary upgrade.\nMusic, poetry, visions—spiritual medium vibes.\nYour heart doesn’t feel—it channels universal love."
+    },
+    "Mercury": {
+      "title": "Mercury in Pisces (Challenging Placement – Reframed as Poetic Insight)",
+      "subtitle": "Your Mind & Communication Style",
+      "description": "Intuitive dreamer—imaginative, subconscious learner. Mercury in Pisces visualizes knowledge: poetry, art, empathy.\nScattered? Multi-dimensional. Shy? Selective sharing.\nYour thoughts don’t logic—they divine. Words paint souls."
+    },
+    "Venus": {
+      "title": "Venus in Pisces (Exalted)",
+      "subtitle": "Your Love Style & Creative Muse",
+      "description": "Universal romantic—sacrificial, inspirational, sensual saint. Venus in Pisces (peak power!) loves without limits: art, nature, poetry.\nDependent? Soul-merge. Gullible? Trusting genius.\nYou don’t love—you dissolve into divine union."
+    },
+    "Mars": {
+      "title": "Mars in Pisces",
+      "subtitle": "Your Drive, Energy & Action Style",
+      "description": "Gentle warrior—compassionate, subtle, flow-driven. Mars in Pisces acts through empathy: art, healing, behind-scenes.\nPassive? Strategic peace. Addictions? Channel creatively.\nYour fire doesn’t fight—it heals. Miracles through mercy."
+    },
+    "Jupiter": {
+      "title": "Jupiter in Pisces",
+      "subtitle": "Your Growth, Luck & Big Compassion",
+      "description": "Boundless empath with spiritual intuition. Jupiter in Pisces expands healing, art, mysticism: doctor, nurse, vet vibes.\nOver-giving? Wise boundaries. Escapist? Sacred retreats.\nYour luck flows through selfless love—world’s soft place."
+    },
+    "Saturn": {
+      "title": "Saturn in Pisces",
+      "subtitle": "Your Discipline, Structure & Long-Term Depth",
+      "description": "Humble mystic with imaginative duty. Saturn in Pisces structures subconscious: research, metaphysics, institutions (hospitals, universities).\nSelf-pity? Emotional mastery. Past-haunted? Present alchemy.\nYou don’t build walls—you bridge worlds with wisdom."
+    },
+    "Uranus": {
+      "title": "Uranus in Pisces",
+      "subtitle": "Your Innovation, Freedom & Radical Spirit",
+      "description": "Intuitive rebel—yoga, Eastern philosophy, performance art. Uranus in Pisces (1919–1927) sparked spiritual tech, dream liberation.\nEscapist? Higher-plane. Nervous? Relax into genius.\nYou don’t invent—you channel cosmic breakthroughs."
+    },
+    "Neptune": {
+      "title": "Neptune in Pisces (Domicile – At Home & Ethereal)",
+      "subtitle": "Your Imagination, Spirituality & Visionary Bliss",
+      "description": "Divine artist—prophetic, musical, culturally transcendent. Neptune in Pisces (its throne!) births peace eras, soul medicine.\nYour visions don’t dream—they birth enlightenment."
+    },
+    "Pluto": {
+      "title": "Pluto in Pisces",
+      "subtitle": "Your Transformation, Power & Deep Soul",
+      "description": "Cultural rebirth generation. Pluto in Pisces unleashes subconscious art, charity revolutions—soul secrets revealed.\nYou don’t evolve—you resurrect humanity’s heart."
+    }
+  }
+}

@@ -30,6 +30,14 @@
     {
       "src": "/generate-chart",
       "dest": "/app.py"
+    },
+    {
+      "src": "/transit-chart",
+      "dest": "/app.py"
+    },
+    {
+      "src": "/geo-lookup",
+      "dest": "/app.py"
     }
   ]
 }

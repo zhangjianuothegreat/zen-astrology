@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Coordinates Lookup - Your Lucky Compass</title>
+    <meta name="description" content="Find latitude, longitude, and timezone for any city worldwide in English.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- 强制加载 tz-lookup（三重保险） -->
+    <script src="https://cdn.jsdelivr.net/npm/tz-lookup@6.1.25"></script>
+    <script>
+        window.tzLookup = window('function' === typeof tzLookup) ? tzLookup : function() { return 'Unknown'; };
+        if (typeof tzLookup === 'undefined') {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/tz-lookup@6.1.25';
+            s.onload = () => console.log('tz-lookup loaded');
+            s.onerror = () => {
+                window.tzLookup = (lat, lon) => {
+                    if (lon > 110 && lon < 135 && lat > 20 && lat < 55) return 'Asia/Shanghai';
+                    if (lon > -125 && lon < -65 && lat > 25 && lat < 50) return 'America/New_York';
+                    if (lon > -10 && lon < 40 && lat > 30 && lat < 70) return 'Europe/London';
+                    return 'Unknown';
+                };
+            };
+            document.head.appendChild(s);
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-purple: #2E1A47;
+            --color-gold: #FFD700;
+            --color-white: #FFFFFF;
+            --color-gray: #F5F5F5;
+            --color-text: #333333;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--color-text); background: linear-gradient(to bottom, #f8f9ff, #e8f0ff); min-height: 100vh; padding: 2rem; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--color-white); border-radius: 12px; box-shadow: 0 4px 20px rgba(46, 26, 71, 0.1); padding: 2rem; }
+        h1 { font-family: var(--font-heading); color: var(--color-purple); text-align: center; margin-bottom: 1rem; font-size: 2.5rem; }
+        h1 span { color: var(--color-gold); }
+        p { text-align: center; color: #666; margin-bottom: 2rem; }
+        .search-box { position: relative; margin-bottom: 1.5rem; }
+        input[type="text"] { width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1.1rem; }
+        input[type="text"]:focus { border-color: var(--color-purple); outline: none; }
+        button { background: linear-gradient(135deg, var(--color-purple), #4B0082); color: var(--color-white); border: none; padding: 1rem 2rem; border-radius: 50px; font-weight: 500; cursor: pointer; width: 100%; font-size: 1.1rem; margin-top: 1rem; transition: transform 0.3s; }
+        button:hover { transform: translateY(-2px); }
+        button:disabled { opacity: 0.6; cursor: not-allowed; }
+        #results { margin-top: 2rem; padding: 1.5rem; background: var(--color-gray); border-radius: 8px; display: none; }
+        .result-item { margin-bottom: 1rem; padding: 1rem; background: var(--color-white); border-radius: 6px; border-left: 4px solid var(--color-gold); }
+        .copy-btn { background: var(--color-gold); color: var(--color-purple); padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem; margin-left: 1rem; cursor: pointer; }
+        #error { color: #d32f2f; text-align: center; margin-top: 1rem; display: none; }
+        @media (max-width: 768px) { body { padding: 1rem; } .container { padding: 1.5rem; } h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Global <span>Coordinates</span> Lookup</h1>
+        <p>Search any city in English to get latitude, longitude, and timezone.</p>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="e.g., New York, NY or Changchun, China" />
+            <button id="searchBtn">Search Coordinates</button>
+        </div>
+        
+        <div id="error"></div>
+        
+        <div id="results">
+            <h3 style="color: var(--color-purple); margin-bottom: 1rem;">Results (English):</h3>
+            <div id="resultList"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://nominatim.openstreetmap.org/search';
+        const USER_AGENT = 'YourLuckyCompass/1.0 (English)';
+
+        document.getElementById('searchBtn').addEventListener('click', searchCoords);
+        document.getElementById('cityInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') searchCoords(); });
+
+        async function searchCoords() {
+            const query = document.getElementById('cityInput').value.trim();
+            if (!query) return showError('Please enter a city name in English.');
+
+            const btn = document.getElementById('searchBtn');
+            btn.disabled = true;
+            btn.textContent = 'Searching...';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+
+            try {
+                // 强制英文 + 提高命中率
+                const url = `${API_URL}?q=${encodeURIComponent(query)}&format=json&limit=5&addressdetails=1&accept-language=en`;
+                const response = await fetch(url, {
+                    headers: { 'User-Agent': USER_AGENT }
+                });
+                const data = await response.json();
+
+                if (data.length === 0) throw new Error('No results. Try English name + country (e.g., "Changchun, China").');
+
+                const resultList = document.getElementById('resultList');
+                resultList.innerHTML = '';
+
+                data.forEach((place, index) => {
+                    const lat = parseFloat(place.lat).toFixed(4);
+                    const lon = parseFloat(place.lon).toFixed(4);
+                    const tz = typeof tzLookup === 'function' ? tzLookup(+lat, +lon) : 'Unknown';
+                    
+                    // 强制提取英文城市名（去掉多余部分）
+                    let cityName = place.display_name;
+                    if (place.address) {
+                        const parts = [];
+                        if (place.address.city) parts.push(place.address.city);
+                        else if (place.address.town) parts.push(place.address.town);
+                        else if (place.address.village) parts.push(place.address.village);
+                        if (place.address.state) parts.push(place.address.state);
+                        if (place.address.country) parts.push(place.address.country);
+                        cityName = parts.join(', ');
+                    }
+
+                    const div = document.createElement('div');
+                    div.className = 'result-item';
+                    div.innerHTML = `
+                        <strong>${index + 1}. ${cityName}</strong><br>
+                        <strong>Latitude:</strong> ${lat} degrees N<br>
+                        <strong>Longitude:</strong> ${lon} degrees E<br>
+                        <strong>Timezone:</strong> ${tz}<br>
+                        <button class="copy-btn" onclick="copyToClipboard('${lat}', '${lon}', '${tz}')">Copy to Chart</button>
+                    `;
+                    resultList.appendChild(div);
+                });
+
+                document.getElementById('results').style.display = 'block';
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Search Coordinates';
+            }
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('error');
+            el.textContent = msg;
+            el.style.display = 'block';
+        }
+
+        function copyToClipboard(lat, lon, tz) {
+            const text = `${lat}, ${lon}, ${tz}`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied! Paste into your birth/transit chart.');
+            });
+        }
+
+        // 自动加载示例（英文）
+        window.onload = () => {
+            document.getElementById('cityInput').value = 'New York, NY';
+            setTimeout(searchCoords, 500);
+        };
+    </script>
+</body>
+</html>
